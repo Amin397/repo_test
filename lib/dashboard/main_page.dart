@@ -28,7 +28,7 @@ class _DashBoardState extends State<DashBoard> {
   String _lastName;
   String _expertId;
   String _mobile;
-  bool __isActive = false;
+  bool __isActive;
   bool __isOnJob;
   bool __isBanned;
   Map _expertData;
@@ -43,7 +43,8 @@ class _DashBoardState extends State<DashBoard> {
   Future<void> setData() async {
     var res = await makePostRequest('$API_ROOT/BaseInfo/Experts/Experts.php', {
       'expert_id': await getPref('expert_id'),
-      'api_type': 'getFullInfo'
+      'api_type': 'getFullInfo',
+      'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
     });
     res = res.json();
     print(res);
@@ -53,7 +54,7 @@ class _DashBoardState extends State<DashBoard> {
       _lastName =  res['data']['lname'];
       _expertId =  res['data']['expert_id'];
       _mobile =  res['data']['mobile'];
-    __isActive =  res['isActive'];
+      __isActive = res['isActive'];
     __isOnJob =  res['isOnJob'];
     __isBanned =  res['isBanned'];
     _expertData =  res['data'];
@@ -96,7 +97,7 @@ class _DashBoardState extends State<DashBoard> {
         if (__isActive) {
           sendLocation();
           setState(() {
-            bgColor = Colors.green;
+            bgColor = Colors.white;
           });
         } else if (__isOnJob) {
           bgColor = Colors.greenAccent;
@@ -140,7 +141,8 @@ class _DashBoardState extends State<DashBoard> {
       'lat': lat,
       'lang': long,
       'api_type': 'setActive',
-      'expert_id': _expertId
+      'expert_id': _expertId,
+      'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
     });
     res = res.json();
     if (res['result'] == 'success') {
@@ -177,6 +179,7 @@ class _DashBoardState extends State<DashBoard> {
             'long': long,
             'api_type': 'updateLocation',
             'expert_id': _expertId,
+            'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
           });
         }
       }
@@ -443,6 +446,11 @@ class _DashBoardState extends State<DashBoard> {
                         onChanged: (value) {
                           print(value);
                           if (value) {
+                            setData().then((completed){
+                              setState(() {
+                                bgColor = Colors.white;
+                              });
+                            });
                             makePostRequest(EXPERTS, {
                               'api_type': 'setActive',
                               'expert_id': _expertId,
@@ -460,6 +468,11 @@ class _DashBoardState extends State<DashBoard> {
                               }
                             });
                           } else {
+                              setData().then((completed){
+                                setState(() {
+                                  bgColor = Colors.redAccent;
+                                });
+                              });
                             makePostRequest(EXPERTS, {
                               'api_type': 'deactive',
                               'expert_id': _expertId,
