@@ -6,9 +6,10 @@ import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<Map> loginExpert(username, password, token) async {
+  print(username);
   var res = await makePostRequest(API_ROOT + '/BaseInfo/Experts/Experts.php', {
-    'username': username,
-    'password': password,
+    'username': username.toString().trim().replaceAll(' ', 'replace'),
+    'password': password.toString().trim(),
     'api_type': 'login',
     'token': token
   });

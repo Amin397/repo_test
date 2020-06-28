@@ -28,7 +28,7 @@ class _DashBoardState extends State<DashBoard> {
   String _lastName;
   String _expertId;
   String _mobile;
-  bool __isActive;
+  bool __isActive = false;
   bool __isOnJob;
   bool __isBanned;
   Map _expertData;
@@ -41,6 +41,7 @@ class _DashBoardState extends State<DashBoard> {
   final FirebaseMessaging _fcm = FirebaseMessaging();
 
   Future<void> setData() async {
+    print(await getPref('expert_id'));
     var res = await makePostRequest('$API_ROOT/BaseInfo/Experts/Experts.php', {
       'expert_id': await getPref('expert_id'),
       'api_type': 'getFullInfo',
@@ -53,7 +54,6 @@ class _DashBoardState extends State<DashBoard> {
       _name =  res['data']['name'];
       _lastName =  res['data']['lname'];
       _expertId =  res['data']['expert_id'];
-      _mobile =  res['data']['mobile'];
       __isActive = res['isActive'];
     __isOnJob =  res['isOnJob'];
     __isBanned =  res['isBanned'];
