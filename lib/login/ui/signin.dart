@@ -230,7 +230,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Widget button() {
     return RaisedButton(
-      elevation: 0,
+      elevation: 4.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       onPressed: () async {
         showLoadingDialog();
@@ -240,7 +240,7 @@ class _SignInScreenState extends State<SignInScreen> {
             .then((token) async {
           print("token = "+token);
           var result = await loginExpert(usernameController.text.toString
-            (), passwordController.text.toString(),token);
+            ().trim(), passwordController.text.toString().trim(),token);
           print("result="+result.toString());
 
           hideLoadingDialog();

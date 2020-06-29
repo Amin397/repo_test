@@ -15,6 +15,7 @@ import 'package:sanannegarexperts/login/funcs.dart';
 import 'package:sanannegarexperts/login/ui/widgets/custom_switch.dart';
 import 'package:sanannegarexperts/map/google_map.dart';
 import 'package:sanannegarexperts/publictest.dart';
+import 'package:sanannegarexperts/push_nofitications.dart';
 import 'package:sanannegarexperts/testinot.dart';
 
 // ignore: must_be_immutable
@@ -41,7 +42,6 @@ class _DashBoardState extends State<DashBoard> {
   final FirebaseMessaging _fcm = FirebaseMessaging();
 
   Future<void> setData() async {
-    print(await getPref('expert_id'));
     var res = await makePostRequest('$API_ROOT/BaseInfo/Experts/Experts.php', {
       'expert_id': await getPref('expert_id'),
       'api_type': 'getFullInfo',
@@ -97,7 +97,7 @@ class _DashBoardState extends State<DashBoard> {
         if (__isActive) {
           sendLocation();
           setState(() {
-            bgColor = Colors.white;
+            bgColor = Colors.lightGreen;
           });
         } else if (__isOnJob) {
           bgColor = Colors.greenAccent;
@@ -167,7 +167,7 @@ class _DashBoardState extends State<DashBoard> {
   }
 
   void sendLocation() {
-    Timer.periodic(new Duration(seconds: 1), (timer) async {
+    Timer.periodic(new Duration(seconds: 3), (timer) async {
       if (__isActive) {
         var position = await getLocation();
         print(position);
@@ -214,13 +214,13 @@ class _DashBoardState extends State<DashBoard> {
       2.0,
       2.3,
       2.4,
+      2.8,
       2.45,
       2.6,
       3.6,
       2.6,
       2.7,
       2.9,
-      2.8,
     ]
   ];
 
@@ -448,7 +448,7 @@ class _DashBoardState extends State<DashBoard> {
                           if (value) {
                             setData().then((completed){
                               setState(() {
-                                bgColor = Colors.white;
+                                bgColor = Colors.lightGreen;
                               });
                             });
                             makePostRequest(EXPERTS, {
@@ -456,7 +456,6 @@ class _DashBoardState extends State<DashBoard> {
                               'expert_id': _expertId,
                               'lat': '33.21542',
                               'lang': '54.21548',
-                              'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
                             }).then((res) {
                               print(res.content());
                               Map data = res.json();
@@ -476,7 +475,6 @@ class _DashBoardState extends State<DashBoard> {
                             makePostRequest(EXPERTS, {
                               'api_type': 'deactive',
                               'expert_id': _expertId,
-                              'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
                             }).then((res) {
                               print(res.content());
                               Map data = res.json();

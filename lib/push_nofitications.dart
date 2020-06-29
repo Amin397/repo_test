@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:sanannegarexperts/login/funcs.dart';
 
 class PushNotificationsManager {
 
@@ -22,6 +23,7 @@ class PushNotificationsManager {
       // For testing purposes print the Firebase Messaging token
       String token = await _firebaseMessaging.getToken();
       print("FirebaseMessaging token: $token");
+      setPref("fireBaseToken", token);
 
       _initialized = true;
     }

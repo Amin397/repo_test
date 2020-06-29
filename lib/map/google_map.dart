@@ -19,11 +19,27 @@ class _GMapState extends State<GMap> {
 
   BitmapDescriptor pinLocationIcon;
   Set<Marker> _markers = {};
+  Set<Polyline> _polyline = {};
+
+  List<LatLng> latlngSegment1 = List();
+  List<LatLng> latlngSegment2 = List();
+  static LatLng _lat1 = LatLng(13.035606, 77.562381);
+  static LatLng _lat2 = LatLng(13.070632, 77.693071);
+  static LatLng _lat3 = LatLng(12.970387, 77.693621);
+  static LatLng _lat4 = LatLng(12.858433, 77.575691);
+  static LatLng _lat5 = LatLng(12.948029, 77.472936);
+  static LatLng _lat6 = LatLng(13.069280, 77.455844);
+  LatLng _lastMapPosition = _lat1;
 
   @override
   void initState() {
     super.initState();
     _setCustomMapPin();
+
+    latlngSegment1.add(_lat1);
+    latlngSegment1.add(_lat2);
+    latlngSegment1.add(_lat3);
+    latlngSegment1.add(_lat4);
   }
 
   void _setCustomMapPin() async {
@@ -37,6 +53,7 @@ class _GMapState extends State<GMap> {
     return Scaffold(
         body: GoogleMap(
           markers: _markers,
+          polylines: _polyline,
           mapType: MapType.normal,
           trafficEnabled: true,
           myLocationButtonEnabled: true,
@@ -63,6 +80,18 @@ class _GMapState extends State<GMap> {
     _controller.complete(controller);
 
     setState(() {
+
+
+      _polyline.add(Polyline(
+        polylineId: PolylineId('line1'),
+        visible: true,
+        //latlng is List<LatLng>
+        points: latlngSegment1,
+        width: 2,
+        color: Colors.blue,
+      ));
+
+
       _markers.add(Marker(
         markerId: markerIdExpert,
         position: expertLocation,

@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/funcs.dart';
+import 'package:sanannegarexperts/login/ui/signin.dart';
+import 'package:sanannegarexperts/push_nofitications.dart';
 
 import 'dashboard/main_page.dart';
 
@@ -28,6 +30,10 @@ class SplashScreenState extends State<SplashScreen>
 
   void navigationPage() async {
     print(await getPref('expert_id'));
+    if(getPref("fireBaseToken") == null){
+      PushNotificationsManager mm = PushNotificationsManager();
+      mm.init();
+    }
     if (await getPref('expert_id') != null) {
       var connectivityResult = await (Connectivity().checkConnectivity());
       if (connectivityResult == ConnectivityResult.mobile ||
@@ -50,12 +56,10 @@ class SplashScreenState extends State<SplashScreen>
     } else {
       Navigator.of(context).pushReplacementNamed(SIGN_IN);
     }
-    return;
-
     Navigator.pushReplacement(
         context,
         PageTransition(
-            type: PageTransitionType.upToDown, child: DashBoard()));
+            type: PageTransitionType.upToDown, child: SignInPage()));
   }
 
   @override
