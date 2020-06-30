@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -17,29 +18,44 @@ class _GMapState extends State<GMap> {
   final MarkerId markerIdExpert = MarkerId("expert");
   final MarkerId markerIdUser = MarkerId("user");
 
+  Set<Polyline> lines = {};
+
+  MapView mapView;
+
   BitmapDescriptor pinLocationIcon;
   Set<Marker> _markers = {};
-  Set<Polyline> _polyline = {};
-
-  List<LatLng> latlngSegment1 = List();
-  List<LatLng> latlngSegment2 = List();
-  static LatLng _lat1 = LatLng(13.035606, 77.562381);
-  static LatLng _lat2 = LatLng(13.070632, 77.693071);
-  static LatLng _lat3 = LatLng(12.970387, 77.693621);
-  static LatLng _lat4 = LatLng(12.858433, 77.575691);
-  static LatLng _lat5 = LatLng(12.948029, 77.472936);
-  static LatLng _lat6 = LatLng(13.069280, 77.455844);
-  LatLng _lastMapPosition = _lat1;
 
   @override
   void initState() {
     super.initState();
     _setCustomMapPin();
 
-    latlngSegment1.add(_lat1);
-    latlngSegment1.add(_lat2);
-    latlngSegment1.add(_lat3);
-    latlngSegment1.add(_lat4);
+    lines.add(
+      Polyline(
+        points: [
+          expertLocation,
+          LatLng(12.988827, 77.472091),
+          LatLng(12.980821, 77.470815),
+          LatLng(12.980823, 77.470813),
+          LatLng(12.980827, 77.470810),
+          LatLng(12.980829, 77.470811),
+          LatLng(12.969406, 77.471301),
+          userLocation
+        ],
+        endCap: Cap.squareCap,
+        geodesic: false,
+        color: Colors.red,
+        width: 4,
+        polylineId: PolylineId("line_one"),
+      ),
+    );
+    lines.add(
+      Polyline(
+        points: [LatLng(12.949798, 77.470534), LatLng(12.938614, 77.469379)],
+        color: Colors.amber,
+        polylineId: PolylineId("line_one"),
+      ),
+    );
   }
 
   void _setCustomMapPin() async {
@@ -53,7 +69,7 @@ class _GMapState extends State<GMap> {
     return Scaffold(
         body: GoogleMap(
           markers: _markers,
-          polylines: _polyline,
+          polylines: lines,
           mapType: MapType.normal,
           trafficEnabled: true,
           myLocationButtonEnabled: true,
@@ -65,6 +81,7 @@ class _GMapState extends State<GMap> {
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           changeCamera(_controller);
+
         },
         child: Icon(Icons.my_location , color: Colors.white,),
       ),
@@ -80,17 +97,6 @@ class _GMapState extends State<GMap> {
     _controller.complete(controller);
 
     setState(() {
-
-
-      _polyline.add(Polyline(
-        polylineId: PolylineId('line1'),
-        visible: true,
-        //latlng is List<LatLng>
-        points: latlngSegment1,
-        width: 2,
-        color: Colors.blue,
-      ));
-
 
       _markers.add(Marker(
         markerId: markerIdExpert,

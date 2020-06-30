@@ -45,7 +45,6 @@ class _DashBoardState extends State<DashBoard> {
     var res = await makePostRequest('$API_ROOT/BaseInfo/Experts/Experts.php', {
       'expert_id': await getPref('expert_id'),
       'api_type': 'getFullInfo',
-      'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
     });
     res = res.json();
     print(res);
@@ -142,7 +141,6 @@ class _DashBoardState extends State<DashBoard> {
       'lang': long,
       'api_type': 'setActive',
       'expert_id': _expertId,
-      'token': '199d2addf2da5116b1accafcf4685f128df2ca69'
     });
     res = res.json();
     if (res['result'] == 'success') {
@@ -448,6 +446,8 @@ class _DashBoardState extends State<DashBoard> {
                           if (value) {
                             setData().then((completed){
                               setState(() {
+                                  PushNotificationsManager mm = PushNotificationsManager();
+                                  mm.init();
                                 bgColor = Colors.lightGreen;
                               });
                             });

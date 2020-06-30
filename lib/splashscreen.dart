@@ -30,10 +30,6 @@ class SplashScreenState extends State<SplashScreen>
 
   void navigationPage() async {
     print(await getPref('expert_id'));
-    if(getPref("fireBaseToken") == null){
-      PushNotificationsManager mm = PushNotificationsManager();
-      mm.init();
-    }
     if (await getPref('expert_id') != null) {
       var connectivityResult = await (Connectivity().checkConnectivity());
       if (connectivityResult == ConnectivityResult.mobile ||
@@ -56,10 +52,10 @@ class SplashScreenState extends State<SplashScreen>
     } else {
       Navigator.of(context).pushReplacementNamed(SIGN_IN);
     }
-    Navigator.pushReplacement(
-        context,
-        PageTransition(
-            type: PageTransitionType.upToDown, child: SignInPage()));
+//    Navigator.pushReplacement(
+//        context,
+//        PageTransition(
+//            type: PageTransitionType.upToDown, child: SignInPage()));
   }
 
   @override
