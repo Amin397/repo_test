@@ -446,8 +446,6 @@ class _DashBoardState extends State<DashBoard> {
                           if (value) {
                             setData().then((completed){
                               setState(() {
-                                  PushNotificationsManager mm = PushNotificationsManager();
-                                  mm.init();
                                 bgColor = Colors.lightGreen;
                               });
                             });

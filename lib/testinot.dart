@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sanannegarexperts/login/constants/constants.dart';
+import 'package:sanannegarexperts/login/funcs.dart';
 
 import 'dashboard/ui/drawer.dart';
 
@@ -43,7 +45,13 @@ class _TestinotState extends State<Testinot> {
             actions: <Widget>[
               FlatButton(
                 child: Text('Ok'),
-                onPressed: () => Navigator.of(context).pop(),
+                onPressed: () {
+//                  makePostRequest(API_V1,
+//                  'target': 'accept',
+//
+//                  );
+                  Navigator.of(context).pop();
+                }
               ),
             ],
           ),
