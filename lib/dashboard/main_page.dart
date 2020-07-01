@@ -7,15 +7,15 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:load/load.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:sanannegarexperts/dashboard/MessageNotification.dart';
 import 'package:sanannegarexperts/dashboard/ui/drawer.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/funcs.dart';
-import 'package:sanannegarexperts/login/ui/widgets/custom_switch.dart';
 import 'package:sanannegarexperts/map/google_map.dart';
 import 'package:sanannegarexperts/publictest.dart';
-import 'package:sanannegarexperts/push_nofitications.dart';
+import 'package:sanannegarexperts/screens/request_ui.dart';
 import 'package:sanannegarexperts/testinot.dart';
 
 // ignore: must_be_immutable
@@ -35,8 +35,10 @@ class _DashBoardState extends State<DashBoard> {
   Map _expertData;
   double lat;
   double long;
+  String request_id;
   GlobalKey overlayKey;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  RequestUi rUI ;
 
   final Firestore _db = Firestore.instance;
   final FirebaseMessaging _fcm = FirebaseMessaging();
@@ -46,7 +48,7 @@ class _DashBoardState extends State<DashBoard> {
       'expert_id': await getPref('expert_id'),
       'api_type': 'getFullInfo',
     });
-    res = res.json();
+    res = res;
     print(res);
 
     setState(() {
@@ -62,24 +64,30 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   void initState() {
+
+    rUI = RequestUi();
+
     _fcm.configure(
       onMessage: (Map<String, dynamic> message) async {
         print("onMessage: $message");
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            content: ListTile(
-              title: Text(message['notification']['title']),
-              subtitle: Text(message['notification']['body']),
-            ),
-            actions: <Widget>[
-              FlatButton(
-                child: Text('Ok'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-            ],
-          ),
-        );
+//        showDialog(
+//          context: context,
+//          builder: (context) => AlertDialog(
+//            content: ListTile(
+//              title: Text(message['notification']['title']),
+//              subtitle: Text(message['notification']['body']),
+//            ),
+//            actions: <Widget>[
+//              FlatButton(
+//                child: Text('Ok'),
+//                onPressed: () => Navigator.of(context).pop(),
+//              ),
+//            ],
+//          ),
+//        );
+        showMaterialModalBottomSheet(context: context, builder: (context , scrollController){
+          return rUI.requestUI(context);
+        });
       },
       onLaunch: (Map<String, dynamic> message) async {
         print("onLaunch: $message");
@@ -362,7 +370,19 @@ class _DashBoardState extends State<DashBoard> {
                 StaggeredTile.extent(2, 220.0),
                 StaggeredTile.extent(2, 110.0),
               ],
-            )));
+            ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){
+//              setState(() {
+//                request_id = '';
+//              });
+//              okRequest(990101, getPref('expert_id'), 'accept').then((res){
+//                print(res);
+//              });
+            },
+          ),
+        )
+    );
   }
 
   Widget _buildTile(Widget child, {Function() onTap}) {

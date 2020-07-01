@@ -249,7 +249,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
           hideLoadingDialog();
           print(result['ok'] as bool);
-          if (result['ok'] as bool) {
+          if (result['ok']) {
             await setPref('expert_id', result['expert']['expert_id'].toString());
             Navigator.pushReplacement(context,
                 PageTransition(

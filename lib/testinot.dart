@@ -24,6 +24,7 @@ class _TestinotState extends State<Testinot> {
   double lat;
   double long;
   GlobalKey overlayKey;
+  String request_id;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final Firestore _db = Firestore.instance;
@@ -33,40 +34,8 @@ class _TestinotState extends State<Testinot> {
   @override
   void initState() {
     _fcm.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        print("onMessage: $message");
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            content: ListTile(
-              title: Text(message['notification']['title']),
-              subtitle: Text(message['notification']['body']),
-            ),
-            actions: <Widget>[
-              FlatButton(
-                child: Text('Ok'),
-                onPressed: () {
-//                  makePostRequest(API_V1,
-//                  'target': 'accept',
-//
-//                  );
-                  Navigator.of(context).pop();
-                }
-              ),
-            ],
-          ),
-        );
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        print("onLaunch: $message");
-        // TODO optional
-      },
-      onResume: (Map<String, dynamic> message) async {
-        print("onResume: $message");
-        // TODO optional
-      },
-    );
 
+    );
   }
 
 

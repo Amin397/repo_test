@@ -1,3 +1,4 @@
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:sanannegarexperts/login/funcs.dart';
 
@@ -17,7 +18,38 @@ class PushNotificationsManager {
       // For iOS request permission first.
       _firebaseMessaging.requestNotificationPermissions();
       _firebaseMessaging.configure(
-
+        onMessage: (Map<String, dynamic> message) async {
+          print("onMessage: $message");
+//        showDialog(
+//          context: context,
+//          builder: (context) => AlertDialog(
+//            content: ListTile(
+//              title: Text(message['notification']['title']),
+//              subtitle: Text(message['notification']['body']),
+//            ),
+//            actions: <Widget>[
+//              FlatButton(
+//                child: Text('Ok'),
+//                onPressed: () {
+//                  setState(() {
+//                    request_id = message['notification']['body'];
+//                  });
+//                  okRequest(990101, getPref('expert_id'), 'accept');
+//                  Navigator.of(context).pop();
+//                }
+//              ),
+//            ],
+//          ),
+//        );
+        },
+        onLaunch: (Map<String, dynamic> message) async {
+          print("onLaunch: $message");
+          // TODO optional
+        },
+        onResume: (Map<String, dynamic> message) async {
+          print("onResume: $message");
+          // TODO optional
+        },
       );
 
       // For testing purposes print the Firebase Messaging token

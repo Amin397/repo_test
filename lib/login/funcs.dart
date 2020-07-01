@@ -21,15 +21,26 @@ Future<Map> loginExpert(username, password, token , imei) async {
   return res.json();
 }
 
+Future<Map> okRequest(request_id, expert_id, target) async {
+  print(request_id);
+  var res = await makePostRequestLogin(API_V1 , {
+    'target': target,
+    'expert_id': 20,
+    'request_id': 990101
+  }
+  );
+  return res.json();
+}
+
 Future<dynamic> makePostRequestLogin(String API,Map params) async {
-  return await Requests.post(API, body: params);
+  return await Requests.post(API, body: params );
 }
 
 // ignore: non_constant_identifier_names
 Future<Map> GetExpert(expertId) async {
   var res = await makePostRequest(API_ROOT + '/BaseInfo/Experts/Experts.php',
       {'expert_id': expertId, 'api_type': 'get'});
-  return res.json();
+  return res;
 }
 
 Future<void> setPref(name, pref) async {
@@ -44,8 +55,8 @@ Future<String> getPref(name) async {
 
 Future<dynamic> makePostRequest(String API,Map params) async {
   params['token'] = '199d2addf2da5116b1accafcf4685f128df2ca69';
-
-  return await Requests.post(API, body: params);
+  var res = await Requests.post(API, body: params);
+  return res.json();
 }
 
 Future<PermissionStatus> _getLocationPermission() async {
