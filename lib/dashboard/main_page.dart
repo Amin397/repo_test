@@ -85,9 +85,6 @@ class _DashBoardState extends State<DashBoard> {
 //            ],
 //          ),
 //        );
-        showMaterialModalBottomSheet(context: context, builder: (context , scrollController){
-          return rUI.requestUI(context);
-        });
       },
       onLaunch: (Map<String, dynamic> message) async {
         print("onLaunch: $message");
@@ -379,6 +376,12 @@ class _DashBoardState extends State<DashBoard> {
 //              okRequest(990101, getPref('expert_id'), 'accept').then((res){
 //                print(res);
 //              });
+              showMaterialModalBottomSheet(
+                  elevation: 4.0,
+                  isDismissible: true,
+                  context: context, builder: (context , scrollController){
+                return rUI.requestUI(context);
+              });
             },
           ),
         )
