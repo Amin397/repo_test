@@ -3,6 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sanannegarexperts/dashboard/ui/custom_clip_path.dart';
+import 'package:sanannegarexperts/screens/request/task_row.dart';
+import 'package:sticky_infinite_list/sticky_infinite_list.dart';
+
+import 'initial_list.dart';
+import 'list_model.dart';
 
 class MainRequest extends StatefulWidget {
   @override
@@ -10,13 +15,39 @@ class MainRequest extends StatefulWidget {
 }
 
 class _MainRequestState extends State<MainRequest> {
-
   GoogleMapController mapController;
+  Map<MarkerId, Marker> markers = {};
+  double _originLatitude = 6.5212402, _originLongitude = 3.3679965;
+
+  final GlobalKey<AnimatedListState> _listKey =
+      new GlobalKey<AnimatedListState>();
+  ListModel listModel;
+
+  ScrollController scrollController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _addMarker(LatLng(_originLatitude, _originLongitude), "destination",
+        BitmapDescriptor.defaultMarker);
+
+    listModel = new ListModel(_listKey, tasks);
+
+    scrollController = ScrollController();
+  }
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery
+        .of(context)
+        .size
+        .height;
+    var width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
     return Directionality(
       textDirection: TextDirection.rtl,
@@ -39,10 +70,10 @@ class _MainRequestState extends State<MainRequest> {
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                     colors: [
-                                  Colors.blue,
-                                  Colors.lightBlue,
-                                  Colors.lightBlueAccent,
-                                ],
+                                      Colors.blue,
+                                      Colors.lightBlue,
+                                      Colors.lightBlueAccent,
+                                    ],
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter)),
                           ),
@@ -106,7 +137,6 @@ class _MainRequestState extends State<MainRequest> {
                               height: height * .04,
                               width: width * .25,
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black54),
                                   color: Colors.blue.shade600,
                                   boxShadow: [
                                     BoxShadow(
@@ -116,7 +146,7 @@ class _MainRequestState extends State<MainRequest> {
                                         offset: Offset(0.0, 2.0))
                                   ],
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(15.0))),
+                                  BorderRadius.all(Radius.circular(15.0))),
                               child: Center(
                                 child: Text(
                                   'اطلاعات کاربر',
@@ -139,10 +169,9 @@ class _MainRequestState extends State<MainRequest> {
                                       spreadRadius: 1.0,
                                       offset: Offset(0.0, 2.0))
                                 ],
-                                border: Border.all(color: Colors.black54),
                                 color: Colors.blue.shade600,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(15.0)),
+                                BorderRadius.all(Radius.circular(15.0)),
                               ),
                               child: Center(
                                 child: Text(
@@ -198,7 +227,7 @@ class _MainRequestState extends State<MainRequest> {
                                 ),
                                 elevation: 10.0,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(100.0)),
+                                BorderRadius.all(Radius.circular(100.0)),
                               ),
                               Material(
                                 child: Container(
@@ -217,7 +246,7 @@ class _MainRequestState extends State<MainRequest> {
                                 ),
                                 elevation: 10.0,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(100.0)),
+                                BorderRadius.all(Radius.circular(100.0)),
                               ),
                             ],
                           ),
@@ -229,22 +258,47 @@ class _MainRequestState extends State<MainRequest> {
                 height: height * .48,
                 child: Stack(
                   children: <Widget>[
-                    _buildTimeLine(height, width)
+                    ListInfinity()
                   ],
                 ),
               ),
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: width * .07 , vertical: height * .02),
+                  padding: EdgeInsets.all(width * .04),
                   child: Container(
-                    height: height,
+                    padding: EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                      border: Border.all(style: BorderStyle.solid),
-                      borderRadius: BorderRadius.all(Radius.circular(15.0))
-                    ),
+                        border: Border.all(
+                            color: Colors.blue.shade600,
+                            width: .8,
+                            style: BorderStyle.solid),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                    height: height,
                     child: Stack(
                       children: <Widget>[
-
+                        Container(
+                          height: height * .11,
+                          child: GoogleMap(
+                            markers: Set<Marker>.of(markers.values),
+                            mapType: MapType.normal,
+                            onMapCreated: _onMapCreated,
+                            myLocationButtonEnabled: true,
+                            buildingsEnabled: true,
+                            zoomControlsEnabled: false,
+                            initialCameraPosition: CameraPosition(
+                                target:
+                                LatLng(_originLatitude, _originLongitude),
+                                zoom: 15.0),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                            'چهار راه طالقانی',
+                            style: TextStyle(
+                                color: Colors.black87, fontSize: 11.0),
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -257,15 +311,66 @@ class _MainRequestState extends State<MainRequest> {
     );
   }
 
-  Widget _buildTimeLine(var height, var width) {
-    return Positioned(
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
+  Widget _buildTimeline() {
+    return new Positioned(
       top: 0.0,
       bottom: 0.0,
-      right: width * .08,
-      child: Container(
+      right: 32.0,
+      child: new Container(
         width: 1.0,
-        color: Colors.grey,
+        color: Colors.grey[300],
       ),
+    );
+  }
+
+  _addMarker(LatLng position, String id, BitmapDescriptor descriptor) {
+    MarkerId markerId = MarkerId(id);
+    Marker marker =
+        Marker(markerId: markerId, icon: descriptor, position: position);
+    markers[markerId] = marker;
+  }
+}
+
+class ListInfinity extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return InfiniteList(
+      builder: (BuildContext context , int index){
+        return InfiniteListItem(
+            headerBuilder: (BuildContext context) {
+              return Container(
+                margin: EdgeInsets.only(right: MediaQuery.of(context).size.width * .08),
+                alignment: Alignment.center,
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.red.shade600,
+                ),
+              );
+            },
+            contentBuilder: (BuildContext context) {
+              return Container(
+                height: 100,
+                width: 300,
+                child: Text(
+                  "Content $index",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                color: Colors.blueAccent,
+              );
+            },
+            minOffsetProvider: (StickyState<int> state) => 50,
+            crossAxisAlignment: HeaderCrossAxisAlignment.end,
+            positionAxis: HeaderPositionAxis.mainAxis
+        );
+      },
     );
   }
 }
