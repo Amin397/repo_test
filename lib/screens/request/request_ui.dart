@@ -49,19 +49,19 @@ class RequestUi {
                   }).then((res)async {
                     if (res['ok']) {
                       amin = Request.fromJson(res);
-                      print(amin.result.car.name);
 //                      await setPref('userLat', res['result']['lat']);
 //                      await setPref('userLon', res['result']['lon']);
-//                      await setPref('userLon', res['result']['lon']);
-//                      await setPref('isFault', res['result']['isFault']);
-//                      await setPref('isDamaged', res['result']['isDamaged']);
-//                      await setPref('address', res['result']['isDamaged']);
+//                      await setPref('isFault', res['result']['isFault'].toString());
+//                      await setPref('isDamaged', res['result']['isDamaged'].toString());
+//                      await setPref('address', res['result']['address']);
+//
+//                      print(getPref('address').toString());
                       hideLoadingDialog();
                       Navigator.push(
                           context,
                           PageTransition(
                               type: PageTransitionType.upToDown,
-                              child: MainRequest()));
+                              child: MainRequest(amin)));
                     } else {
                       print('amin');
                     }

@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sanannegarexperts/model/request_model.dart';
 
 class EndPart extends StatefulWidget {
+
+  Request request;
+  EndPart(Request reequest){
+    this.request = reequest;
+  }
+
   @override
   _EndPartState createState() => _EndPartState();
 }
 
 class _EndPartState extends State<EndPart> {
+
   GoogleMapController mapController;
   Map<MarkerId, Marker> markers = {};
   double _originLatitude = 6.5212402, _originLongitude = 3.3679965;
@@ -56,7 +64,7 @@ class _EndPartState extends State<EndPart> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(
-                'چهار راه طالقانی',
+                '${widget.request.result.address}',
                 style: TextStyle(color: Colors.black87, fontSize: 11.0),
               ),
             )

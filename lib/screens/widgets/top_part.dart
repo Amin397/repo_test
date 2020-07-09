@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sanannegarexperts/dashboard/ui/custom_clip_path.dart';
+import 'package:sanannegarexperts/model/request_model.dart';
 
 class TopPart extends StatelessWidget {
+
+  Request request;
+  TopPart(Request reequest){
+    this.request = reequest;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +50,7 @@ class TopPart extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .005),
                         child: Text(
-                          'مقصر',
+                          (request.result.isFault) ? 'مقصر' : 'زیان دیده',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
@@ -140,7 +147,7 @@ class TopPart extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * .013),
                 child: Text(
-                  'حسن قلی خانی',
+                  '${request.result.customer.fname} ${request.result.customer.lname}',
                   style: TextStyle(
                       color: Colors.black87,
                       fontWeight: FontWeight.bold,
