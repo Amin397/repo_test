@@ -56,6 +56,7 @@ dependencies:
   flutter_polyline_points: ^0.2.2
   modal_bottom_sheet: ^0.1.6+1
   clippy_flutter: ^1.1.1
+  http: ^0.12.1
 
 dev_dependencies:
   flutter_test:

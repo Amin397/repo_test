@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'dart:core';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:location_permissions/location_permissions.dart';
 import 'package:requests/requests.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
+import 'package:sanannegarexperts/model/request_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart';
 
 Future<Map> loginExpert(username, password, token , imei) async {
   print(username);
@@ -16,17 +18,6 @@ Future<Map> loginExpert(username, password, token , imei) async {
     'password': password.toString().trim(),
     'ft': token,
     'imei': imei
-  }
-  );
-  return res.json();
-}
-
-Future<Map> okRequest(request_id, expert_id, target) async {
-  print(request_id);
-  var res = await makePostRequestLogin(API_V1 , {
-    'target': target,
-    'expert_id': 20,
-    'request_id': 990101
   }
   );
   return res.json();

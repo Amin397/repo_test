@@ -11,8 +11,8 @@ class CarTag extends StatelessWidget {
       height: (height * .48) * .15,
       width: width * .565,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-          border: Border.all(color: Colors.black, width: 2.0)),
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          border: Border.all(color: Colors.black, width: 1.5)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
@@ -21,8 +21,8 @@ class CarTag extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(8.0),
-                    bottomRight: Radius.circular(8.0)),
+                    topRight: Radius.circular(3.0),
+                    bottomRight: Radius.circular(3.0)),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +52,7 @@ class CarTag extends StatelessWidget {
             ),
           ),
           Container(
-            width: 2,
+            width: 1.5,
             color: Colors.black,
           ),
           Container(
@@ -106,8 +106,8 @@ class CarTag extends StatelessWidget {
               width: (width * .6) * .13,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(7.0),
-                      bottomLeft: Radius.circular(7.0)),
+                      topLeft: Radius.circular(3.0),
+                      bottomLeft: Radius.circular(3.0)),
                   color: Colors.blue.shade800),
               child: Padding(
                 padding: EdgeInsets.only(top: 3),
