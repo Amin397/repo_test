@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:load/load.dart';
@@ -5,17 +8,19 @@ import 'package:page_transition/page_transition.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/funcs.dart';
 import 'file:///G:/saman_negar_experts/lib/screens/request/main_request.dart';
+import 'package:sanannegarexperts/model/request_model.dart';
 
 class RequestUi {
   final BuildContext context;
   final ScrollController scrollController;
 
-  RequestUi({this.context , this.scrollController});
+  RequestUi({this.context, this.scrollController});
 
   Widget requestUI(BuildContext context) {
-
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+
+    Request amin = Request();
 
     var beforeAcceptHeight = MediaQuery.of(context).size.height * .065;
     var accepted = false;
@@ -35,17 +40,29 @@ class RequestUi {
                 onTap: () {
                   accepted = !accepted;
                   showLoadingDialog();
+//                  reqHandler();
+//                  hideLoadingDialog();
                   makePostRequest(API_V1, {
                     'target': 'accept',
                     'expert_id': 40,
                     'request_id': 990101
-                  }).then((res) {
-
-                    if(res['ok']){
+                  }).then((res)async {
+                    if (res['ok']) {
+                      amin = Request.fromJson(res);
+                      print(amin.result.car.name);
+//                      await setPref('userLat', res['result']['lat']);
+//                      await setPref('userLon', res['result']['lon']);
+//                      await setPref('userLon', res['result']['lon']);
+//                      await setPref('isFault', res['result']['isFault']);
+//                      await setPref('isDamaged', res['result']['isDamaged']);
+//                      await setPref('address', res['result']['isDamaged']);
                       hideLoadingDialog();
-                      Navigator.push(context, PageTransition(type: PageTransitionType.upToDown, child: MainRequest()));
-                    }
-                    else{
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.upToDown,
+                              child: MainRequest()));
+                    } else {
                       print('amin');
                     }
                   });
@@ -69,8 +86,7 @@ class RequestUi {
                         ),
                       ),
                     )),
-              )
-          ),
+              )),
           Align(
             alignment: Alignment.topCenter,
             child: Container(
@@ -86,7 +102,8 @@ class RequestUi {
                     backgroundColor: Colors.white,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: width * .08 , top: width * .02),
+                    padding:
+                        EdgeInsets.only(right: width * .08, top: width * .02),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
@@ -122,4 +139,20 @@ class RequestUi {
       ),
     );
   }
+
+//  Future<Request> reqHandler()async{
+//    final http.Response response = await http.post(API_V1 ,
+//        body:jsonEncode(<String , dynamic>{
+//          'target': 'accept',
+//          'expert_id': 40,
+//          'request_id': 990101
+//        }));
+//
+//    print(response.body);
+////    if(response.statusCode == 200){
+////      return Request.fromJson(json.decode(response.body));
+////    }else{
+////      throw Exception('amin');
+////    }
+//  }
 }

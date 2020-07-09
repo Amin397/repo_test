@@ -30,7 +30,7 @@ class MiddlePart extends StatelessWidget {
               ),
             ),
           ),
-          
+
         ],
       ),
     );
