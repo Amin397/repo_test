@@ -24,7 +24,6 @@ class _GMapState extends State<GMap> {
   void initState() {
     super.initState();
 
-
     /// origin marker
     _addMarker(LatLng(_originLatitude, _originLongitude), "origin",
         BitmapDescriptor.defaultMarker);

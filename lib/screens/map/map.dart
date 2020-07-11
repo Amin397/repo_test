@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -18,6 +20,10 @@ class _MapRouteState extends State<MapRoute> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    Timer.periodic(new Duration(seconds: 3), (timer) async {
+
+    });
 
     _addMarker(LatLng(_originLatitude, _originLongitude), "destination",
         BitmapDescriptor.defaultMarker);
