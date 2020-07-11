@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sanannegarexperts/model/request_model.dart';
+import 'package:sanannegarexperts/screens/map/map.dart';
 
 class EndPart extends StatefulWidget {
-
   Request request;
-  EndPart(Request reequest){
+
+  EndPart(Request reequest) {
     this.request = reequest;
   }
 
@@ -47,18 +49,35 @@ class _EndPartState extends State<EndPart> {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.height * .11,
-              child: GoogleMap(
-                markers: Set<Marker>.of(markers.values),
-                mapType: MapType.normal,
-                onMapCreated: _onMapCreated,
-                myLocationButtonEnabled: true,
-                buildingsEnabled: true,
-                zoomControlsEnabled: false,
-                initialCameraPosition: CameraPosition(
-                    target: LatLng(_originLatitude, _originLongitude),
-                    zoom: 15.0),
+            Hero(
+              tag: "hero1",
+              child: Container(
+                height: MediaQuery.of(context).size.height * .11,
+                child: GoogleMap(
+                  markers: Set<Marker>.of(markers.values),
+                  mapType: MapType.normal,
+                  onMapCreated: _onMapCreated,
+                  myLocationButtonEnabled: true,
+                  buildingsEnabled: true,
+                  zoomControlsEnabled: false,
+                  initialCameraPosition: CameraPosition(
+                      target: LatLng(_originLatitude, _originLongitude),
+                      zoom: 15.0),
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        fullscreenDialog: true,
+                        builder: (BuildContext context) =>
+                            MapRoute()));
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * .11,
               ),
             ),
             Align(
