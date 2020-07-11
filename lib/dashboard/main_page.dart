@@ -170,7 +170,7 @@ class _DashBoardState extends State<DashBoard> {
   }
 
   void sendLocation() {
-    Timer.periodic(new Duration(seconds: 3), (timer) async {
+    Timer.periodic(new Duration(seconds: 4), (timer) async {
       if (__isActive) {
         var position = await getLocation();
         print(position);
