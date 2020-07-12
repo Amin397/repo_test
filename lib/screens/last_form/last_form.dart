@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:load/load.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/funcs.dart';
+import 'package:sanannegarexperts/screens/last_form/widgets/classes/file_class.dart';
 import 'package:sanannegarexperts/screens/last_form/widgets/page_list/first_page.dart';
 import 'package:sanannegarexperts/screens/last_form/widgets/page_list/second_page.dart';
 import 'package:sanannegarexperts/screens/last_form/widgets/page_list/third_page.dart';
@@ -68,10 +69,33 @@ class _LastFormState extends State<LastForm>
   File image_cart;
   File image_khesarat;
 
+  Filess files;
+
   @override
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0, viewportFraction: 0.8);
+
+    files = Filess(
+        image_koli,
+        image_jolo_pelak,
+        image_jolo_rast_pelak,
+        image_jolo_chap_pelak,
+        image_aghab_pelak,
+        image_aghab_rast_pelak,
+        image_aghab_chap_pelak,
+        image_shasi_number,
+        image_motor_number,
+        image_ayene_kamel,
+        image_lavazem_janebi_fabrik,
+        image_gheyre_fabrik_otagh,
+        image_zapas,
+        image_ring_lastic,
+        image_kilometr_airbag,
+        image_options,
+        image_shishe,
+        image_cart,
+        image_khesarat);
   }
 
   @override
@@ -122,28 +146,7 @@ class _LastFormState extends State<LastForm>
       ),
       Padding(
           padding: EdgeInsets.all(20.0),
-          child: Page3(
-              image_koli,
-              image_jolo_pelak,
-              image_jolo_rast_pelak,
-              image_jolo_chap_pelak,
-              image_aghab_pelak,
-              image_aghab_rast_pelak,
-              image_aghab_chap_pelak,
-              image_shasi_number,
-              image_motor_number,
-              image_ayene_kamel,
-              image_lavazem_janebi_fabrik,
-              image_gheyre_fabrik_otagh,
-              image_zapas,
-              image_ring_lastic,
-              image_kilometr_airbag,
-              image_options,
-              image_shishe,
-              image_cart,
-              image_khesarat,
-            _pageController
-          )),
+          child: Page3()),
     ];
 
     var height = MediaQuery.of(context).size.height;
@@ -187,6 +190,90 @@ class _LastFormState extends State<LastForm>
                   controller: _pageController,
                 ),
               ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                onTap: () {
+                  showLoadingDialog();
+                  makePostRequest(API_V1, {
+                    'target': 'initialVisit',
+                    'state_id': ostan,
+                    'city_id': city,
+                    'request_id': sherkate_bime_motaghazi,
+                    'presenter_id': brand_mashin,
+                    'type_of_car_id': model_mashin,
+                    'car_model_id': shobe_bimeGozar,
+                    'company_id': year,
+                    'company_branch_id': noee_bime_mashin,
+                    'caruse_id': 9,
+                    'year_id': 10,
+                    'car_insurance_type_id': 11,
+                    'insurancerisk_id': 12,
+                    'insurance_company_id': 13,
+                    'cbranch_id': 14,
+                    'customer_id': 15,
+                    'presenters_visit_i_koli': files.image_koli,
+                    'presenters_visit_i_jbp': files.image_jolo_pelak,
+                    'presenters_visit_i_jvrbp': files.image_jolo_rast_pelak,
+                    'presenters_visit_i_jvcbp': files.image_jolo_chap_pelak,
+                    'presenters_visit_i_kbp': files.image_aghab_pelak,
+                    'presenters_visit_i_avrbp': files.image_aghab_rast_pelak,
+                    'presenters_visit_i_avcbp': files.image_aghab_chap_pelak,
+                    'presenters_visit_i_shasih': files.image_shasi_number,
+                    'presenters_visit_i_motorh': files.image_motor_number,
+                    'presenters_visit_i_ayenek': files.image_ayene_kamel,
+                    'presenters_visit_i_janbif': files.image_lavazem_janebi_fabrik,
+                    'presenters_visit_i_ghirfd': files.image_gheyre_fabrik_otagh,
+                    'presenters_visit_i_zapas': files.image_zapas,
+                    'presenters_visit_i_ringvl': files.image_ring_lastic,
+                    'presenters_visit_i_kilomvi': files.image_kilometr_airbag,
+                    'presenters_visit_i_option': files.image_options,
+                    'presenters_visit_i_shishe': files.image_shishe,
+                    'presenters_visit_i_kart': files.image_cart,
+                    'presenters_visit_i_khsart': files.image_khesarat,
+                    'presenters_visit_desc': 'amin',
+                    'presenters_visit_adamb': 'amin',
+                    'presenters_visit_address': 'amin',
+                    'presenters_visit_time': 'amin',
+                    'presenters_visit_coordinate': 'amin',
+                    'presenters_visit_date': 'amin',
+                    'presenters_visit_limit': 'amin',
+                    'presenters_visit_request_time': 'amin',
+                    'presenters_visit_request_date': 'amin',
+                    'presenters_visit_reference': 'amin',
+                    'presenters_visit_sal': 'amin',
+                    'presenters_visit_pelak': 'amin',
+                    'presenters_visit_shasi': 'amin',
+                    'presenters_visit_motor': 'amin',
+                    'presenters_visit_zarfit': 'amin',
+                    'presenters_visit_rang': 'amin',
+                    'presenters_visit_arzesh': 'amin',
+                  }).then((res) async {
+                    if (res['ok']) {
+                      print('send request is success');
+                      print(files.image_koli);
+                      hideLoadingDialog();
+                    } else {
+                      print('amin');
+                    }
+                  });
+                },
+                child: Container(
+                  height: height * .07,
+                  margin: EdgeInsets.symmetric(horizontal: width * .2 , vertical: height * .03),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0)
+                    ),
+                    color: Colors.deepOrangeAccent
+                  ),
+                  child: Center(
+                    child: Text('ثبت اطلاعات' , style: TextStyle(fontSize: 14.0 , color: Colors.white),),
+                  ),
+                ),
+              ),
             )
           ],
         ),
@@ -194,67 +281,3 @@ class _LastFormState extends State<LastForm>
     );
   }
 }
-
-//  showLoadingDialog();
-//  makePostRequest(API_V1, {
-//  'target': 'initialVisit',
-//  'state_id': ostan,
-//  'city_id': city,
-//  'request_id': sherkate_bime_motaghazi,
-//  'presenter_id': brand_mashin,
-//  'type_of_car_id': model_mashin,
-//  'car_model_id': shobe_bimeGozar,
-//  'company_id': year,
-//  'company_branch_id': noee_bime_mashin,
-//  'caruse_id': 9,
-//  'year_id': 10,
-//  'car_insurance_type_id': 11,
-//  'insurancerisk_id': 12,
-//  'insurance_company_id': 13,
-//  'cbranch_id': 14,
-//  'customer_id': 15,
-//  'presenters_visit_i_koli': 'amin',
-//  'presenters_visit_i_jbp': 'amin',
-//  'presenters_visit_i_jvrbp': 'amin',
-//  'presenters_visit_i_jvcbp': 'amin',
-//  'presenters_visit_i_kbp': 'amin',
-//  'presenters_visit_i_avrbp': 'amin',
-//  'presenters_visit_i_avcbp': 'amin',
-//  'presenters_visit_i_shasih': 'amin',
-//  'presenters_visit_i_motorh': 'amin',
-//  'presenters_visit_i_ayenek': 'amin',
-//  'presenters_visit_i_janbif': 'amin',
-//  'presenters_visit_i_ghirfd': 'amin',
-//  'presenters_visit_i_zapas': 'amin',
-//  'presenters_visit_i_ringvl': 'amin',
-//  'presenters_visit_i_kilomvi': 'amin',
-//  'presenters_visit_i_option': 'amin',
-//  'presenters_visit_i_shishe': 'amin',
-//  'presenters_visit_i_kart': 'amin',
-//  'presenters_visit_i_khsart': 'amin',
-//  'presenters_visit_desc': 'amin',
-//  'presenters_visit_adamb': 'amin',
-//  'presenters_visit_address': 'amin',
-//  'presenters_visit_time': 'amin',
-//  'presenters_visit_coordinate': 'amin',
-//  'presenters_visit_date': 'amin',
-//  'presenters_visit_limit': 'amin',
-//  'presenters_visit_request_time': 'amin',
-//  'presenters_visit_request_date': 'amin',
-//  'presenters_visit_reference': 'amin',
-//  'presenters_visit_sal': 'amin',
-//  'presenters_visit_pelak': 'amin',
-//  'presenters_visit_shasi': 'amin',
-//  'presenters_visit_motor': 'amin',
-//  'presenters_visit_zarfit': 'amin',
-//  'presenters_visit_rang': 'amin',
-//  'presenters_visit_arzesh': 'amin',
-//  }).then((res) async {
-//  if (res['ok']) {
-//  print('send request is success');
-//  hideLoadingDialog();
-//  } else {
-//  print('amin');
-//  }
-//  });
-//}
