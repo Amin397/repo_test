@@ -11,6 +11,7 @@ class Page3 extends StatefulWidget {
 }
 
 class _Page3State extends State<Page3> {
+
   Filess filess = Filess();
 
   @override
@@ -24,6 +25,7 @@ class _Page3State extends State<Page3> {
         child: Scaffold(
           body: Container(
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: width * .07 , vertical: height * .01),
