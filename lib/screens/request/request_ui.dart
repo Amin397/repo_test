@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:load/load.dart';
@@ -40,8 +37,6 @@ class RequestUi {
                 onTap: () {
                   accepted = !accepted;
                   showLoadingDialog();
-//                  reqHandler();
-//                  hideLoadingDialog();
                   makePostRequest(API_V1, {
                     'target': 'accept',
                     'expert_id': 40,
@@ -49,13 +44,6 @@ class RequestUi {
                   }).then((res)async {
                     if (res['ok']) {
                       amin = Request.fromJson(res);
-//                      await setPref('userLat', res['result']['lat']);
-//                      await setPref('userLon', res['result']['lon']);
-//                      await setPref('isFault', res['result']['isFault'].toString());
-//                      await setPref('isDamaged', res['result']['isDamaged'].toString());
-//                      await setPref('address', res['result']['address']);
-//
-//                      print(getPref('address').toString());
                       hideLoadingDialog();
                       Navigator.push(
                           context,
@@ -139,20 +127,4 @@ class RequestUi {
       ),
     );
   }
-
-//  Future<Request> reqHandler()async{
-//    final http.Response response = await http.post(API_V1 ,
-//        body:jsonEncode(<String , dynamic>{
-//          'target': 'accept',
-//          'expert_id': 40,
-//          'request_id': 990101
-//        }));
-//
-//    print(response.body);
-////    if(response.statusCode == 200){
-////      return Request.fromJson(json.decode(response.body));
-////    }else{
-////      throw Exception('amin');
-////    }
-//  }
 }

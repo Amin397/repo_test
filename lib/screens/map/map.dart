@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sanannegarexperts/screens/last_form/last_form.dart';
 import 'package:solid_bottom_sheet/solid_bottom_sheet.dart';
 
 class MapRoute extends StatefulWidget {
@@ -37,36 +38,59 @@ class _MapRouteState extends State<MapRoute> {
           maxHeight: height * .5,
           smoothness: Smoothness.high,
           draggableBody: true,
-          elevation: 10.0,
+          autoSwiped: false,
           toggleVisibilityOnTap: true,
-          onHide: (){
-            setState(() {
-              _showSecond = !_showSecond;
-            });
-          },
+          elevation: 10.0,
           headerBar: Container(
             height: height * .06,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),),
+                topLeft: Radius.circular(20.0),
+                topRight: Radius.circular(20.0),
+              ),
               color: Colors.white.withOpacity(.8),
             ),
             child: Center(
-              child: Column(
-                children: <Widget>[
-                  Icon(Icons.keyboard_arrow_up),
-                  Text("اطلاعات کاربر" ,
-                    style: TextStyle(
+                child: Column(
+              children: <Widget>[
+                Icon(Icons.keyboard_arrow_up),
+                Text(
+                  "اطلاعات کاربر",
+                  style: TextStyle(
                       height: 1,
-                        color: Colors.black , fontWeight: FontWeight.w600
-                    ),),
-                ],
-              )
-            ),
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            )),
           ),
           body: Container(
-            color: Colors.red,
+            child: Stack(
+              children: <Widget>[
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => LastForm()));
+                      },
+                      child: Container(
+                        height: height * .07,
+                        width: width * .6,
+                        decoration: BoxDecoration(
+                            color: Colors.yellowAccent.shade700,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(15.0),
+                                topLeft: Radius.circular(15.0))),
+                        child: Center(
+                          child: Text('به مقصد رسیدم'),
+                        ),
+                      ),
+                    ))
+              ],
+            ),
           ),
         ),
         body: Stack(
