@@ -1,7 +1,6 @@
 import 'dart:io';
 
 class Filess {
-
   File image_koli;
   File image_jolo_pelak;
   File image_jolo_rast_pelak;
@@ -21,7 +20,6 @@ class Filess {
   File image_shishe;
   File image_cart;
   File image_khesarat;
-
   Filess(
       [this.image_koli,
       this.image_jolo_pelak,
@@ -43,4 +41,12 @@ class Filess {
       this.image_cart,
       this.image_khesarat]
       );
+}
+
+class Strings{
+
+}
+
+class TextInputController{
+
 }

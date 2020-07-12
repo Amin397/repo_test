@@ -58,6 +58,8 @@ class _Page1State extends State<Page1> {
     return Container(
       child: Center(
         child: Scaffold(
+          backgroundColor: Colors.white.withOpacity(.6),
+          resizeToAvoidBottomInset: false,
           body: Container(
             child: Column(
               children: <Widget>[
@@ -521,7 +523,7 @@ class _Page1State extends State<Page1> {
                     },
                     child: Container(
                       height: 40.0,
-                      color: Colors.blue,
+                      color: Colors.blue.withOpacity(.8),
                       child: Center(
                         child: Text(
                           'مرحله بعد',

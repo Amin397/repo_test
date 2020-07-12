@@ -23,6 +23,7 @@ class _Page3State extends State<Page3> {
     return Container(
       child: Center(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Container(
             child: ListView(
               physics: BouncingScrollPhysics(),
