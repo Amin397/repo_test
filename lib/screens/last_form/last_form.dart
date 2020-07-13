@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sanannegarexperts/screens/last_form/success_page.dart';
 import 'package:sanannegarexperts/screens/last_form/widgets/classes/file_class.dart';
 import 'package:sanannegarexperts/screens/last_form/widgets/page_list/first_page.dart';
 import 'package:sanannegarexperts/screens/last_form/widgets/page_list/second_page.dart';
@@ -15,7 +16,6 @@ class LastForm extends StatefulWidget {
 
 class _LastFormState extends State<LastForm>
     with SingleTickerProviderStateMixin {
-
   static PageController _pageController;
 
   TextEditingController arzesh = TextEditingController();
@@ -98,37 +98,35 @@ class _LastFormState extends State<LastForm>
         image_khesarat);
 
     strings = Strings(
-      ostan ,
-      city ,
-      sherkate_bime_motaghazi,
-      namayandegi,
-      brand_mashin,
-      carbary_mashin,
-      model_mashin,
-      shobe_bimeGozar,
-      year,
-      noee_bime_mashin,
-      khatarate_pishnehadi
-    );
+        ostan,
+        city,
+        sherkate_bime_motaghazi,
+        namayandegi,
+        brand_mashin,
+        carbary_mashin,
+        model_mashin,
+        shobe_bimeGozar,
+        year,
+        noee_bime_mashin,
+        khatarate_pishnehadi);
 
     tController = TextController(
-      address,
-      arzesh,
-      zarfiat,
-      pelak,
-      shasi,
-      elateadam,
-      tozihat,
-      motor,
-      range,
-      bimegozar_name,
-      tarikh_bazdid,
-      saate_bazdid,
-      sal_sakht,
-      saate_erja_markazi,
-      limit_time,
-      saate_hamahangi
-    );
+        address,
+        arzesh,
+        zarfiat,
+        pelak,
+        shasi,
+        elateadam,
+        tozihat,
+        motor,
+        range,
+        bimegozar_name,
+        tarikh_bazdid,
+        saate_bazdid,
+        sal_sakht,
+        saate_erja_markazi,
+        limit_time,
+        saate_hamahangi);
   }
 
   @override
@@ -142,20 +140,13 @@ class _LastFormState extends State<LastForm>
     List<Widget> pages = [
       Padding(
         padding: EdgeInsets.all(15.0),
-        child: Page1(
-          strings,
-          _pageController
-        ),
+        child: Page1(strings, _pageController),
       ),
       Padding(
         padding: EdgeInsets.all(15.0),
-        child: Page2(
-            tController,
-            _pageController),
+        child: Page2(tController, _pageController),
       ),
-      Padding(padding: EdgeInsets.all(20.0),
-          child: Page3(files , strings , tController)
-      ),
+      Page3(files, strings, tController),
     ];
 
     var height = MediaQuery.of(context).size.height;
