@@ -1,46 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:sanannegarexperts/screens/last_form/widgets/classes/file_class.dart';
 
 class Page1 extends StatefulWidget {
 
-  String ostan;
-  String city;
-  String sherkate_bime_motaghazi;
-  String namayandegi;
-  String brand_mashin;
-  String carbary_mashin;
-  String model_mashin;
-  String shobe_bimeGozar;
-  String year;
-  String noee_bime_mashin;
-  String khatarate_pishnehadi;
+  Strings strings;
   PageController _pageController;
 
-  Page1(
-      String ostan,
-      String city,
-      String sherkate_bime_motaghazi,
-      String namayandegi,
-      String brand_mashin,
-      String carbary_mashin,
-      String model_mashin,
-      String shobe_bimeGozar,
-      String year,
-      String noee_bime_mashin,
-      String khatarate_pishnehadi,
-      PageController pageController
-      ){
-   this.ostan = ostan;
-   this.city = city;
-   this.sherkate_bime_motaghazi = sherkate_bime_motaghazi;
-   this.namayandegi = namayandegi;
-   this.brand_mashin = brand_mashin;
-   this.carbary_mashin = carbary_mashin;
-   this.model_mashin = model_mashin;
-   this.shobe_bimeGozar = shobe_bimeGozar;
-   this.year = year;
-   this.noee_bime_mashin = noee_bime_mashin;
-   this.khatarate_pishnehadi = khatarate_pishnehadi;
-   this._pageController = pageController;
+  Page1(Strings strings , PageController _pageController){
+    this.strings = strings;
+    this._pageController = _pageController;
   }
 
   @override
@@ -82,19 +50,14 @@ class _Page1State extends State<Page1> {
                                     width: width * .3,
                                     child: Center(
                                       child:DropdownButton<String>(
-                                        value: widget.ostan,
-                                        icon: Icon(Icons.arrow_downward),
+                                        value: widget.strings.ostan,
+                                        icon: Icon(Icons.keyboard_arrow_down),
                                         iconSize: 24,
                                         elevation: 16,
                                         style: TextStyle(color: Colors.deepPurple),
-                                        underline: Container(
-                                          height: 2,
-                                          width: double.infinity,
-                                          color: Colors.deepPurpleAccent,
-                                        ),
                                         onChanged: (String newValue) {
                                           setState(() {
-                                            widget.ostan = newValue;
+                                            widget.strings.ostan = newValue;
                                           });
                                         },
                                         items: <String>[
@@ -122,18 +85,14 @@ class _Page1State extends State<Page1> {
                                     width: width * .3,
                                     child: Center(
                                       child: DropdownButton<String>(
-                                        value: widget.city,
-                                        icon: Icon(Icons.arrow_downward),
+                                        value: widget.strings.city,
+                                        icon: Icon(Icons.keyboard_arrow_down),
                                         iconSize: 24,
                                         elevation: 16,
                                         style: TextStyle(color: Colors.deepPurple),
-                                        underline: Container(
-                                          height: 2,
-                                          color: Colors.deepPurpleAccent,
-                                        ),
                                         onChanged: (String newValue) {
                                           setState(() {
-                                            widget.city = newValue;
+                                            widget.strings.city = newValue;
                                           });
                                         },
                                         items: <String>['تهران', 'اصفهان', 'شیراز', 'قم']
@@ -165,18 +124,14 @@ class _Page1State extends State<Page1> {
                                   width: width * .3,
                                   child: Center(
                                     child: DropdownButton<String>(
-                                      value: widget.sherkate_bime_motaghazi,
-                                      icon: Icon(Icons.arrow_downward),
-                                      iconSize: 24,
+                                      value: widget.strings.sherkate_bime_motaghazi,
+                                      icon: Icon(Icons.keyboard_arrow_down),
+                                      iconSize: 20,
                                       elevation: 16,
                                       style: TextStyle(color: Colors.deepPurple),
-                                      underline: Container(
-                                        height: 2,
-                                        color: Colors.deepPurpleAccent,
-                                      ),
                                       onChanged: (String newValue) {
                                         setState(() {
-                                          widget.sherkate_bime_motaghazi = newValue;
+                                          widget.strings.sherkate_bime_motaghazi = newValue;
                                         });
                                       },
                                       items: <String>['ایران', 'دی', 'پارسیان', 'سینا']
@@ -200,18 +155,14 @@ class _Page1State extends State<Page1> {
                                   width: width * .3,
                                   child: Center(
                                     child: DropdownButton<String>(
-                                      value: widget.namayandegi,
-                                      icon: Icon(Icons.arrow_downward),
+                                      value: widget.strings.namayandegi,
+                                      icon: Icon(Icons.keyboard_arrow_down),
                                       iconSize: 24,
                                       elevation: 16,
                                       style: TextStyle(color: Colors.deepPurple),
-                                      underline: Container(
-                                        height: 2,
-                                        color: Colors.deepPurpleAccent,
-                                      ),
                                       onChanged: (String newValue) {
                                         setState(() {
-                                          widget.namayandegi = newValue;
+                                          widget.strings.namayandegi = newValue;
                                         });
                                       },
                                       items: <String>[
@@ -241,18 +192,14 @@ class _Page1State extends State<Page1> {
                           child: Container(
                             child: Center(
                               child: DropdownButton<String>(
-                                value: widget.shobe_bimeGozar,
-                                icon: Icon(Icons.arrow_downward),
+                                value: widget.strings.shobe_bimeGozar,
+                                icon: Icon(Icons.keyboard_arrow_down),
                                 iconSize: 24,
                                 elevation: 16,
                                 style: TextStyle(color: Colors.deepPurple),
-                                underline: Container(
-                                  height: 2,
-                                  color: Colors.deepPurpleAccent,
-                                ),
                                 onChanged: (String newValue) {
                                   setState(() {
-                                    widget.shobe_bimeGozar = newValue;
+                                    widget.strings.shobe_bimeGozar = newValue;
                                   });
                                 },
                                 items: <String>[
@@ -279,18 +226,14 @@ class _Page1State extends State<Page1> {
                           child: Container(
                             child: Center(
                               child: DropdownButton<String>(
-                                value: widget.khatarate_pishnehadi,
-                                icon: Icon(Icons.arrow_downward),
+                                value: widget.strings.khatarate_pishnehadi,
+                                icon: Icon(Icons.keyboard_arrow_down),
                                 iconSize: 24,
                                 elevation: 16,
                                 style: TextStyle(color: Colors.deepPurple),
-                                underline: Container(
-                                  height: 2,
-                                  color: Colors.deepPurpleAccent,
-                                ),
                                 onChanged: (String newValue) {
                                   setState(() {
-                                    widget.khatarate_pishnehadi = newValue;
+                                    widget.strings.khatarate_pishnehadi = newValue;
                                   });
                                 },
                                 items: <String>[
@@ -318,18 +261,14 @@ class _Page1State extends State<Page1> {
                             width: width * .22,
                             child: Center(
                               child: DropdownButton<String>(
-                                value: widget.brand_mashin,
-                                icon: Icon(Icons.arrow_downward),
+                                value: widget.strings.brand_mashin,
+                                icon: Icon(Icons.keyboard_arrow_down),
                                 iconSize: 24,
                                 elevation: 16,
                                 style: TextStyle(color: Colors.deepPurple),
-                                underline: Container(
-                                  height: 2,
-                                  color: Colors.deepPurpleAccent,
-                                ),
                                 onChanged: (String newValue) {
                                   setState(() {
-                                    widget.brand_mashin = newValue;
+                                    widget.strings.brand_mashin = newValue;
                                   });
                                 },
                                 items: <String>[
@@ -369,18 +308,14 @@ class _Page1State extends State<Page1> {
                                   width: width * .3,
                                   child: Center(
                                     child: DropdownButton<String>(
-                                      value: widget.model_mashin,
-                                      icon: Icon(Icons.arrow_downward),
+                                      value: widget.strings.model_mashin,
+                                      icon: Icon(Icons.keyboard_arrow_down),
                                       iconSize: 24,
                                       elevation: 16,
                                       style: TextStyle(color: Colors.deepPurple),
-                                      underline: Container(
-                                        height: 2,
-                                        color: Colors.deepPurpleAccent,
-                                      ),
                                       onChanged: (String newValue) {
                                         setState(() {
-                                          widget.model_mashin = newValue;
+                                          widget.strings.model_mashin = newValue;
                                         });
                                       },
                                       items: <String>['111', 'تیبا', 'هاچ بک', 'ساینا']
@@ -404,18 +339,14 @@ class _Page1State extends State<Page1> {
                                   width: width * 0.3,
                                   child: Center(
                                     child: DropdownButton<String>(
-                                      value: widget.carbary_mashin,
-                                      icon: Icon(Icons.arrow_downward),
+                                      value: widget.strings.carbary_mashin,
+                                      icon: Icon(Icons.keyboard_arrow_down),
                                       iconSize: 24,
                                       elevation: 16,
                                       style: TextStyle(color: Colors.deepPurple),
-                                      underline: Container(
-                                        height: 2,
-                                        color: Colors.deepPurpleAccent,
-                                      ),
                                       onChanged: (String newValue) {
                                         setState(() {
-                                          widget.carbary_mashin = newValue;
+                                          widget.strings.carbary_mashin = newValue;
                                         });
                                       },
                                       items: <String>[
@@ -447,18 +378,14 @@ class _Page1State extends State<Page1> {
                           child: Container(
                             child: Center(
                               child: DropdownButton<String>(
-                                value: widget.noee_bime_mashin,
-                                icon: Icon(Icons.arrow_downward),
+                                value: widget.strings.noee_bime_mashin,
+                                icon: Icon(Icons.keyboard_arrow_down),
                                 iconSize: 24,
                                 elevation: 16,
                                 style: TextStyle(color: Colors.deepPurple),
-                                underline: Container(
-                                  height: 2,
-                                  color: Colors.deepPurpleAccent,
-                                ),
                                 onChanged: (String newValue) {
                                   setState(() {
-                                    widget.noee_bime_mashin = newValue;
+                                    widget.strings.noee_bime_mashin = newValue;
                                   });
                                 },
                                 items: <String>['بدنه', 'ثالث']
@@ -481,18 +408,14 @@ class _Page1State extends State<Page1> {
                           child: Container(
                             child: Center(
                               child: DropdownButton<String>(
-                                value: widget.year,
-                                icon: Icon(Icons.arrow_downward),
+                                value: widget.strings.year,
+                                icon: Icon(Icons.keyboard_arrow_down),
                                 iconSize: 24,
                                 elevation: 16,
                                 style: TextStyle(color: Colors.deepPurple),
-                                underline: Container(
-                                  height: 2,
-                                  color: Colors.deepPurpleAccent,
-                                ),
                                 onChanged: (String newValue) {
                                   setState(() {
-                                    widget.year = newValue;
+                                    widget.strings.year = newValue;
                                   });
                                 },
                                 items: <String>['شمسی', 'میلادی']

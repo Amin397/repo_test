@@ -9,13 +9,16 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:load/load.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:overlay_support/overlay_support.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sanannegarexperts/dashboard/MessageNotification.dart';
 import 'package:sanannegarexperts/dashboard/ui/drawer.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/funcs.dart';
 import 'package:sanannegarexperts/map/google_map.dart';
+import 'package:sanannegarexperts/model/request_model.dart';
 import 'package:sanannegarexperts/publictest.dart';
 import 'package:sanannegarexperts/screens/last_form/last_form.dart';
+import 'package:sanannegarexperts/screens/request/main_request.dart';
 import 'file:///G:/saman_negar_experts/lib/screens/request/request_ui.dart';
 import 'package:sanannegarexperts/testinot.dart';
 
@@ -238,6 +241,9 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   Widget build(BuildContext context) {
+
+    Request amin = Request();
+
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -384,7 +390,50 @@ class _DashBoardState extends State<DashBoard> {
 //                return rUI.requestUI(context);
 //              });
 
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => LastForm()));
+              showModalBottomSheet<void>(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    height: 200,
+                    color: Colors.amber,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const Text('Modal BottomSheet'),
+                          RaisedButton(
+                            child: const Text('قبول درخواست'),
+                            onPressed: (){
+                              showLoadingDialog();
+                              makePostRequest(API_V1, {
+                                'target': 'accept',
+                                'expert_id': 40,
+                                'request_id': 990101
+                              }).then((res)async {
+                                if (res['ok']) {
+                                  amin = Request.fromJson(res);
+                                  hideLoadingDialog();
+                                  Navigator.pop(context);
+                                  Navigator.push(
+                                      context,
+                                      PageTransition(
+                                          type: PageTransitionType.upToDown,
+                                          child: MainRequest(amin)));
+
+                                } else {
+                                  print('amin');
+                                }
+                              });;
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+//            Navigator.of(context).push(MaterialPageRoute(builder: (context) => LastForm()));
             },
           ),
         )

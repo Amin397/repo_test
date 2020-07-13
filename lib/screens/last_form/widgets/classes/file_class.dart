@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 
 class Filess {
   File image_koli;
@@ -44,9 +45,65 @@ class Filess {
 }
 
 class Strings{
+  String ostan = 'تهران';
+  String city = 'تهران';
+  String sherkate_bime_motaghazi = 'پارسیان';
+  String namayandegi = 'نمایندگی تهران';
+  String brand_mashin = 'پراید';
+  String carbary_mashin = 'سواری';
+  String model_mashin = '111';
+  String shobe_bimeGozar = 'شعبه کرج';
+  String year = 'شمسی';
+  String noee_bime_mashin = 'بدنه';
+  String khatarate_pishnehadi = 'آتش سوزی';
 
+  Strings(
+      this.ostan,
+      this.city,
+      this.sherkate_bime_motaghazi,
+      this.namayandegi,
+      this.brand_mashin,
+      this.carbary_mashin,
+      this.model_mashin,
+      this.shobe_bimeGozar,
+      this.year,
+      this.noee_bime_mashin,
+      this.khatarate_pishnehadi);
 }
 
-class TextInputController{
+class TextController{
+  TextEditingController arzesh = TextEditingController();
+  TextEditingController address = TextEditingController();
+  TextEditingController zarfiat = TextEditingController();
+  TextEditingController pelak = TextEditingController();
+  TextEditingController shasi = TextEditingController();
+  TextEditingController elateadam = TextEditingController();
+  TextEditingController tozihat = TextEditingController();
+  TextEditingController motor = TextEditingController();
+  TextEditingController range = TextEditingController();
+  TextEditingController bimegozar_name = TextEditingController();
+  TextEditingController tarikh_bazdid = TextEditingController();
+  TextEditingController saate_bazdid = TextEditingController();
+  TextEditingController sal_sakht = TextEditingController();
+  TextEditingController saate_erja_markazi = TextEditingController();
+  TextEditingController limit_time = TextEditingController();
+  TextEditingController saate_hamahangi = TextEditingController();
 
+  TextController(
+      this.arzesh,
+      this.address,
+      this.zarfiat,
+      this.pelak,
+      this.shasi,
+      this.elateadam,
+      this.tozihat,
+      this.motor,
+      this.range,
+      this.bimegozar_name,
+      this.tarikh_bazdid,
+      this.saate_bazdid,
+      this.sal_sakht,
+      this.saate_erja_markazi,
+      this.limit_time,
+      this.saate_hamahangi);
 }
