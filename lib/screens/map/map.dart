@@ -45,7 +45,7 @@ class _MapRouteState extends State<MapRoute> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
           bottomSheet: SolidBottomSheet(
-            maxHeight: height * .55,
+            maxHeight: height * .4,
             smoothness: Smoothness.high,
             showOnAppear: true,
             draggableBody: true,
@@ -79,11 +79,11 @@ class _MapRouteState extends State<MapRoute> {
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                    top: (height * .55) * .01,
+                    top: (height * .55) * .2,
                     left: width * .01,
                     child: Container(
-                      height: (height * .55) * .3,
-                      width: width * .43,
+                      height: (height * .55) * .35,
+                      width: width * .5,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
@@ -91,7 +91,7 @@ class _MapRouteState extends State<MapRoute> {
                     ),
                   ),
                   Positioned(
-                    top: (height * .55) * .1,
+                    top: (height * .55) * .07,
                     right: width * .03,
                     child: Container(
                       width: width * .56,

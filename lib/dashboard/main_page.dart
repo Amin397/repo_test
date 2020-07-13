@@ -398,12 +398,60 @@ class _DashBoardState extends State<DashBoard> {
                     height: 200,
                     color: Colors.amber,
                     child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
+                      child: Stack(
+                        overflow: Overflow.clip,
                         children: <Widget>[
-                          const Text('Modal BottomSheet'),
-                          BuildContainer(),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 5.0),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: GestureDetector(
+                                onTap: (){
+                                  showLoadingDialog();
+//                                  _controller.dispose();
+                                  makePostRequest(API_V1, {
+                                    'target': 'accept',
+                                    'expert_id': 40,
+                                    'request_id': 990101
+                                  }).then((res)async {
+                                    if (res['ok']) {
+                                      amin = Request.fromJson(res);
+                                      hideLoadingDialog();
+                                      Navigator.pop(context);
+                                      Navigator.push(
+                                          context,
+                                          PageTransition(
+                                              type: PageTransitionType.upToDown,
+                                              child: MainRequest(amin)));
+
+                                    } else {
+                                      print('amin');
+                                    }
+                                  });
+                                },
+                                child: Container(
+                                  height: 40.0,
+                                  width: MediaQuery.of(context).size.width,
+                                  color: Colors.red,
+                                  child: Center(
+                                    child: Text(
+                                      'قبول درخواست',
+                                      style: TextStyle(
+                                          color: Colors.white
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 5.0),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: BuildContainer(),
+                            ),
+                          )
                         ],
                       ),
                     ),
