@@ -60,308 +60,308 @@ class _Page2State extends State<Page2> {
                             height: height * .06,
                           ),
 
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.sal_sakht,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'سال ساخت'),
-//                            ),
-//                          ),
-//
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.saate_erja_markazi,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'ساعت ارجاع ستاد مرکزی'),
-//                            ),
-//                          ),
-//
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.address,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'آدرس'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.limit_time,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'حداکثر زمان بازدید مجاز'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.zarfiat,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'ظرفیت'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.saate_hamahangi,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'ساعت هماهنگی بازدید با مالک'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.pelak,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'پلاک'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.shasi,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'شاسی'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.tozihat,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'توضیحات'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.motor,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'موتور'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.range,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'رنگ'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.bimegozar_name,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'نام بیمه گذار'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.tarikh_bazdid,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'تاریخ بازدید'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.saate_bazdid,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'ساعت بادزید'),
-//                            ),
-//                          ),
-//                          Container(
-//                            decoration: BoxDecoration(
-//                              color: Colors.green,
-//                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-//                            ),
-//                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
-//                            height: height * .06,
-//                            child: TextFormField(
-//                              textAlign: TextAlign.center,
-//                              controller: widget.elateadam,
-//                              decoration: InputDecoration(
-//                                  hintStyle: TextStyle(
-//                                    color: Colors.black,
-//                                    fontSize: 14.0,
-//                                  ),
-//                                  hintMaxLines: 1,
-//                                  border: InputBorder.none,
-//                                  hintText: 'علت عدم بازدید'),
-//                            ),
-//                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.sal_sakht,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'سال ساخت'),
+                            ),
+                          ),
+
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.saate_erja_markazi,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'ساعت ارجاع ستاد مرکزی'),
+                            ),
+                          ),
+
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.address,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'آدرس'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.limit_time,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'حداکثر زمان بازدید مجاز'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.zarfiat,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'ظرفیت'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.saate_hamahangi,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'ساعت هماهنگی بازدید با مالک'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.pelak,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'پلاک'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.shasi,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'شاسی'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.tozihat,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'توضیحات'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.motor,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'موتور'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.range,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'رنگ'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.bimegozar_name,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'نام بیمه گذار'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.tarikh_bazdid,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'تاریخ بازدید'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.saate_bazdid,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'ساعت بادزید'),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                            ),
+                            margin: EdgeInsets.only(left: width * .1 , right: width * .1 , bottom: height * .02),
+                            height: height * .06,
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: widget.tController.elateadam,
+                              decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                  hintMaxLines: 1,
+                                  border: InputBorder.none,
+                                  hintText: 'علت عدم بازدید'),
+                            ),
+                          ),
                         ],
                       ),
                     ],

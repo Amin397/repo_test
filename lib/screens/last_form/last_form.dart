@@ -200,29 +200,6 @@ class _LastFormState extends State<LastForm>
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: GestureDetector(
-                onTap: () {
-                },
-                child: Container(
-                  height: height * .07,
-                  margin: EdgeInsets.symmetric(
-                      horizontal: width * .2, vertical: height * .03),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20.0),
-                          bottomRight: Radius.circular(20.0)),
-                      color: Colors.deepOrangeAccent),
-                  child: Center(
-                    child: Text(
-                      'ثبت اطلاعات',
-                      style: TextStyle(fontSize: 14.0, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),
