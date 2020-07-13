@@ -18,6 +18,7 @@ import 'package:sanannegarexperts/map/google_map.dart';
 import 'package:sanannegarexperts/model/request_model.dart';
 import 'package:sanannegarexperts/publictest.dart';
 import 'package:sanannegarexperts/screens/last_form/last_form.dart';
+import 'package:sanannegarexperts/screens/request/button.dart';
 import 'package:sanannegarexperts/screens/request/main_request.dart';
 import 'file:///G:/saman_negar_experts/lib/screens/request/request_ui.dart';
 import 'package:sanannegarexperts/testinot.dart';
@@ -402,31 +403,7 @@ class _DashBoardState extends State<DashBoard> {
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const Text('Modal BottomSheet'),
-                          RaisedButton(
-                            child: const Text('قبول درخواست'),
-                            onPressed: (){
-                              showLoadingDialog();
-                              makePostRequest(API_V1, {
-                                'target': 'accept',
-                                'expert_id': 40,
-                                'request_id': 990101
-                              }).then((res)async {
-                                if (res['ok']) {
-                                  amin = Request.fromJson(res);
-                                  hideLoadingDialog();
-                                  Navigator.pop(context);
-                                  Navigator.push(
-                                      context,
-                                      PageTransition(
-                                          type: PageTransitionType.upToDown,
-                                          child: MainRequest(amin)));
-
-                                } else {
-                                  print('amin');
-                                }
-                              });;
-                            },
-                          )
+                          BuildContainer(),
                         ],
                       ),
                     ),

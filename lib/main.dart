@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:sanannegarexperts/GLOBAL_CONSTANTS.dart';
 import 'package:sanannegarexperts/dashboard/main_page.dart';
@@ -20,8 +21,6 @@ void main() => runApp(LoadingProvider(
     ));
 
 class MyApp extends StatelessWidget {
-
-
 
   @override
   Widget build(BuildContext context) {

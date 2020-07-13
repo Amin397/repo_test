@@ -1011,23 +1011,22 @@ class _Page3State extends State<Page3> {
                           showLoadingDialog();
                           makePostRequest(API_V1, {
                             'target': 'initialVisit',
-                            'state_id': 'ostan',
-                            'city_id': 'city',
+                            'state_id': widget.strings.ostan,
+                            'city_id': widget.strings.city,
                             'request_id': 3,
                             'presenter_id': 4,
-                            'type_of_car_id': 'brand_mashin',
-                            'car_model_id': 'model_mashin',
-                            'company_id': 'sherkate_bime_motaghazi',
-                            'company_branch_id': 'shobe_bimeGozar',
-                            'caruse_id': 'carbary_mashin',
-                            'year_id': 'year',
-                            'car_insurance_type_id': 'noee_bime_mashin',
-                            'insurancerisk_id': 'khatarate_pishnehadi',
-                            'insurance_company_id': 'namayandegi',
+                            'type_of_car_id': widget.strings.brand_mashin,
+                            'car_model_id': widget.strings.model_mashin,
+                            'company_id': widget.strings.sherkate_bime_motaghazi,
+                            'company_branch_id': widget.strings.shobe_bimeGozar,
+                            'caruse_id': widget.strings.carbary_mashin,
+                            'year_id': widget.strings.year,
+                            'car_insurance_type_id': widget.strings.noee_bime_mashin,
+                            'insurancerisk_id': widget.strings.khatarate_pishnehadi,
+                            'insurance_company_id': widget.strings.namayandegi,
                             'cbranch_id': 14,
                             'customer_id': 15,
-                            'presenters_visit_i_koli':
-                                'image_koli.readAsStringSync()',
+                            'presenters_visit_i_koli': 'widget.file.image_koli.path',
                             'presenters_visit_i_jbp': '',
                             'presenters_visit_i_jvrbp': '',
                             'presenters_visit_i_jvcbp': '',
@@ -1074,7 +1073,6 @@ class _Page3State extends State<Page3> {
                                   transitionDuration:
                                       Duration(milliseconds: 600),
                                   pageBuilder: (_, __, ___) => SuccessPage()));
-//                        Navigator.of(context).pop();
                             } else {
                               print('error');
                             }

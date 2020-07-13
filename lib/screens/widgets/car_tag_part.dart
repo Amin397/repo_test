@@ -14,7 +14,10 @@ class CarTagPart extends StatelessWidget {
     return Container(
       height: ((MediaQuery.of(context).size.height * .48) * .18),
       child: Center(
-        child: CarTag(),
+        child: Hero(
+          tag: "carTag",
+          child: CarTag(),
+        ),
       ),
     );
   }

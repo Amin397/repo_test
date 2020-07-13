@@ -73,7 +73,7 @@ class _EndPartState extends State<EndPart> {
                     MaterialPageRoute(
                         fullscreenDialog: true,
                         builder: (BuildContext context) =>
-                            MapRoute()));
+                            MapRoute(widget.request)));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
