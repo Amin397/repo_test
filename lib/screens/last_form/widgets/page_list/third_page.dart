@@ -53,7 +53,7 @@ class _Page3State extends State<Page3> {
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -96,13 +96,15 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_koli),
+                                          widget.file.image_koli,
+                                    'عکس کامل'
+                                  ),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -145,13 +147,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_jolo_pelak),
+                                          widget.file.image_jolo_pelak,
+                                    'عکس کامل جلو با پلاک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -195,13 +198,15 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_jolo_rast_pelak),
+                                          widget.file.image_jolo_rast_pelak,
+                                    'عکس جلو و راست با پلاک',
+                                  ),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -245,13 +250,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_jolo_chap_pelak),
+                                          widget.file.image_jolo_chap_pelak,
+                                    'عکس جلو و چپ با پلاک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -294,13 +300,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_aghab_pelak),
+                                          widget.file.image_aghab_pelak,
+                                    'عکس کامل عقب با پلاک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -344,13 +351,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_aghab_rast_pelak),
+                                          widget.file.image_aghab_rast_pelak,
+                                    'عکس عقب و راست با پلاک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -394,13 +402,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_aghab_chap_pelak),
+                                          widget.file.image_aghab_chap_pelak,
+                                    'عکس عقب و چپ با پلاک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -444,13 +453,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_shasi_number),
+                                          widget.file.image_shasi_number,
+                                    'عکس شماره شاسی حک شده',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -494,13 +504,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_motor_number),
+                                          widget.file.image_motor_number,
+                                    'عکس شماره موتور حک شده',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -543,13 +554,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_ayene_kamel),
+                                          widget.file.image_ayene_kamel,
+                                    'عکس آینه ها کامل',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -594,13 +606,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(widget
-                                          .file.image_lavazem_janebi_fabrik),
+                                          .file.image_lavazem_janebi_fabrik,
+                                    'عکس لوازم جانبی فابریک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -645,13 +658,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(widget
-                                          .file.image_gheyre_fabrik_otagh),
+                                          .file.image_gheyre_fabrik_otagh,
+                                    'عکس لوازم غیرفابریک اتاق',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -694,13 +708,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_zapas),
+                                          widget.file.image_zapas,
+                                    'عکس زاپاس',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -743,13 +758,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_ring_lastic),
+                                          widget.file.image_ring_lastic,
+                                    'عکس رینگ و لاستیک',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -793,13 +809,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_kilometr_airbag),
+                                          widget.file.image_kilometr_airbag,
+                                    'عکس صفحه کیلومتر با ایربگ',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -842,13 +859,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_options),
+                                          widget.file.image_options,
+                                    'عکس آپشن ها',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -891,13 +909,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_shishe),
+                                          widget.file.image_shishe,
+                                    'عکس شیشه ها',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -940,13 +959,14 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_cart),
+                                          widget.file.image_cart,
+                                    'عکس کارت خودرو',),
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
                                       vertical: height * .01),
-                                  height: (height) * .2,
+                                  height: (height) * .25,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15.0)),
@@ -989,7 +1009,8 @@ class _Page3State extends State<Page3> {
                                           ),
                                         )
                                       : _decidedImageView(
-                                          widget.file.image_khesarat),
+                                          widget.file.image_khesarat,
+                                    'عکس خسارات فعلی',),
                                 ),
                               ],
                             ),
@@ -1104,19 +1125,48 @@ class _Page3State extends State<Page3> {
     );
   }
 
-  Widget _decidedImageView(File imageFile) {
+  Widget _decidedImageView(File imageFile , String image_name) {
     return Container(
       height: ((MediaQuery.of(context).size.height * .75) * .88) * .15,
       width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
       ),
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(13.0)),
-            image: DecorationImage(
-                fit: BoxFit.cover, image: Image.file(imageFile).image)),
-      ),
+      child: Stack(overflow: Overflow.clip,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(13.0)),
+                image: DecorationImage(
+                    fit: BoxFit.cover, image: Image.file(imageFile).image)),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Colors.black.withOpacity(.6),
+                  Colors.black.withOpacity(.4),
+                  Colors.black.withOpacity(.1),
+                  Colors.transparent
+                ]
+              )
+            ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                image_name,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600
+                ),
+              ),
+            ),
+          )
+        ],
+      )
     );
   }
 
