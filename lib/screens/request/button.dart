@@ -52,7 +52,7 @@ class _BuildContainerState extends State<BuildContainer> with TickerProviderStat
   @override
   Widget build(BuildContext context) {
 
-    _widthAnimation = Tween( begin: MediaQuery.of(context).size.width, end: 0.0).animate(CurvedAnimation(
+    _widthAnimation = Tween( begin: MediaQuery.of(context).size.width - 10.0, end: 0.0).animate(CurvedAnimation(
       parent: _controller,
       curve: Curves.linear,
     ));
@@ -87,7 +87,7 @@ class _BuildContainerState extends State<BuildContainer> with TickerProviderStat
           height: 40.0,
           width: _widthAnimation.value,
           decoration: BoxDecoration(
-              color: Colors.red.shade800.withOpacity(.6),
+              color: Colors.orangeAccent.shade700.withOpacity(.8),
 //              borderRadius: BorderRadius.circular(_roundnessAnimation.value)
           ),
         ),
