@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:sanannegarexperts/alert_info/alert_user_info.dart';
 import 'package:sanannegarexperts/dashboard/ui/custom_clip_path.dart';
 import 'package:sanannegarexperts/model/request_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TopPart extends StatelessWidget {
 
   Request request;
-  TopPart(Request reequest){
+
+  TopPart(Request reequest) {
     this.request = reequest;
   }
 
   @override
   Widget build(BuildContext context) {
+
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
+
     return Container(
-      height: MediaQuery.of(context).size.height * .27,
+      height: height * .27,
       child: Stack(
         children: <Widget>[
           Align(
@@ -20,8 +28,8 @@ class TopPart extends StatelessWidget {
             child: SafeArea(
               child: ClipPath(
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .22,
-                  width: MediaQuery.of(context).size.width,
+                  height: height * .22,
+                  width:width,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                           colors: [
@@ -42,13 +50,13 @@ class TopPart extends StatelessWidget {
               child: ClipPath(
                 clipper: CustomClipPath(),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * .12,
-                  width: MediaQuery.of(context).size.width * .7,
+                  height: height * .12,
+                  width: width * .7,
                   color: Colors.blue.shade600,
                   child: Align(
                       alignment: Alignment.topCenter,
                       child: Padding(
-                        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .005),
+                        padding: EdgeInsets.only(top: height * .005),
                         child: Text(
                           (request.result.isFault) ? 'مقصر' : 'زیان دیده',
                           style: TextStyle(
@@ -62,25 +70,32 @@ class TopPart extends StatelessWidget {
             ),
           ),
 //ClipRRect from top of
-          Positioned(
-            left: MediaQuery.of(context).size.width * .38,
-            top: MediaQuery.of(context).size.height * .065,
-            child: Material(
-              elevation: 5.0,
-              shadowColor: Colors.lightBlueAccent,
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              child: CircleAvatar(
-                child: Image.asset(
-                  'assets/images/avatar.png',
-                  fit: BoxFit.fill,
-                ),
-                radius: 50,
+          Align(
+            alignment: Alignment.center,
+              child: Material(
+                  elevation: 5.0,
+                  shadowColor: Colors.lightBlueAccent,
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                  child: Padding(
+                    padding: EdgeInsets.all(1.5),
+                    child: Container(
+                      height: (height * .27) * .55,
+                      width: (height * .27) * .55,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(request.result.customer.avatar).image
+                          )
+                      ),
+                    ),
+                  )
               ),
-            ),
           ),
-//user avatar
+
+
           Positioned(
-            top: MediaQuery.of(context).size.height * .16,
+            top: height * .16,
             right: 0.0,
             left: 0.0,
             child: Row(
@@ -89,8 +104,8 @@ class TopPart extends StatelessWidget {
               children: <Widget>[
                 Container(
                     margin: EdgeInsets.symmetric(horizontal: 16.0),
-                    height: MediaQuery.of(context).size.height * .04,
-                    width: MediaQuery.of(context).size.width * .25,
+                    height: height * .04,
+                    width: width * .25,
                     decoration: BoxDecoration(
                         color: Colors.blue.shade600,
                         boxShadow: [
@@ -102,20 +117,34 @@ class TopPart extends StatelessWidget {
                         ],
                         borderRadius:
                         BorderRadius.all(Radius.circular(15.0))),
-                    child: Center(
-                      child: Text(
-                        'اطلاعات کاربر',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'IRANSans'),
+                    child: InkWell(
+                      onTap: (){
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => CustomDialog(
+                            title: "اطلاعات کاربر",
+                            request: request,
+                            description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.met, consectetur adua.met, consectetur adipiscinggna aliqua.met, cconsectetur adipiscinggna aliquaipiscinggna aliqua.met, cconsectetur adipiscinggna aliqua.met, consectetur adipisonsectetur adipiscing elit, sed do eiusmod tempor incidid elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq",
+                            buttonText: "Okay",
+                          ),
+                        );
+                      },
+                      child: Center(
+                        child: Text(
+                          'اطلاعات کاربر',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'IRANSans'),
+                        ),
                       ),
                     )),
                 Container(
                     margin: EdgeInsets.symmetric(horizontal: 16.0),
-                    height: MediaQuery.of(context).size.height * .04,
-                    width: MediaQuery.of(context).size.width * .25,
+                    height: height * .04,
+                    width: width * .25,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -145,9 +174,10 @@ class TopPart extends StatelessWidget {
           Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * .013),
+                padding: EdgeInsets.only(bottom: height * .013),
                 child: Text(
-                  '${request.result.customer.fname} ${request.result.customer.lname}',
+                  '${request.result.customer.fname} ${request.result.customer
+                      .lname}',
                   style: TextStyle(
                       color: Colors.black87,
                       fontWeight: FontWeight.bold,
@@ -160,23 +190,28 @@ class TopPart extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * .1, vertical: MediaQuery.of(context).size.height * .03),
+                    horizontal: width * .1, vertical: height * .03),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Material(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white),
-                        height: MediaQuery.of(context).size.height * .05,
-                        width: MediaQuery.of(context).size.height * .05,
-                        child: Center(
-                          child: Icon(
-                            Icons.phone_android,
-                            size: 21,
-                            color: Colors.lightGreenAccent.shade700,
+                      child: GestureDetector(
+                        onTap: (){
+
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white),
+                          height: height * .05,
+                          width: height * .05,
+                          child: Center(
+                            child: Icon(
+                              Icons.phone_android,
+                              size: 21,
+                              color: Colors.lightGreenAccent.shade700,
+                            ),
                           ),
                         ),
                       ),
@@ -189,8 +224,8 @@ class TopPart extends StatelessWidget {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.white),
-                        height: MediaQuery.of(context).size.height * .05,
-                        width: MediaQuery.of(context).size.height * .05,
+                        height: height * .05,
+                        width: height * .05,
                         child: Center(
                           child: Icon(
                             Icons.local_post_office,

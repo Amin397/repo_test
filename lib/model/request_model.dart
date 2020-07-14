@@ -126,6 +126,10 @@ class Customer {
     this.lname,
     this.mobile,
     this.nationalCode,
+    this.birth_date,
+    this.numberId,
+    this.placeOfIssue,
+    this.fatherName,
     this.avatar,
   });
 
@@ -134,6 +138,10 @@ class Customer {
   String lname;
   String mobile;
   String nationalCode;
+  String birth_date;
+  String numberId;
+  String placeOfIssue;
+  String fatherName;
   String avatar;
 
   factory Customer.fromJson(Map<String, dynamic> json) => Customer(
@@ -141,6 +149,10 @@ class Customer {
     fname: json["fname"],
     lname: json["lname"],
     mobile: json["mobile"],
+    birth_date: json["birth_date"],
+    numberId: json["numberId"],
+    placeOfIssue: json["placeOfIssue"],
+    fatherName: json["fatherName"],
     nationalCode: json["nationalCode"],
     avatar: json["avatar"],
   );
@@ -151,6 +163,10 @@ class Customer {
     lname = map['lname'];
     mobile = map['mobile'];
     nationalCode = map['nationalCode'];
+    birth_date = map['birth_date'];
+    numberId = map['numberId'];
+    placeOfIssue = map['placeOfIssue'];
+    fatherName = map['fatherName'];
     avatar = map['avatar'];
   }
 }

@@ -2,11 +2,13 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:load/load.dart';
+import 'package:lottie/lottie.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:page_transition/page_transition.dart';
@@ -395,12 +397,90 @@ class _DashBoardState extends State<DashBoard> {
                 context: context,
                 builder: (BuildContext context) {
                   return Container(
-                    height: 200,
-                    color: Colors.amber,
+                    height: MediaQuery.of(context).size.height * .3,
                     child: Center(
                       child: Stack(
                         overflow: Overflow.clip,
                         children: <Widget>[
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              padding: EdgeInsets.only(top: 10.0 , right: 10.0),
+                              width: MediaQuery.of(context).size.width * .7,
+                              height: (MediaQuery.of(context).size.height * .4) * .85,
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    width: MediaQuery.of(context).size.width * .7,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                            'تیبا'
+                                        ),
+                                        Text(
+                                            ': ماشین مقصر'
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 30.0,
+                                  ),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width * .7,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                            'تویوتا'
+                                        ),
+                                        Text(
+                                            ': ماشین زیان دیده'
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              margin: EdgeInsets.only(top: 20.0),
+                              width: MediaQuery.of(context).size.width,
+                              child: Center(
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text('تهران ، میدان انقلاب اسلامی'),
+                                    SizedBox(
+                                      width: 20.0,
+                                    ),
+                                    Container(
+                                      height: 120.0,
+                                      child: Lottie.asset('assets/anim/flutter_location.json'),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 10.0,
+                            left: 10.0,
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                height: 100.0,
+                                child: Lottie.asset('assets/anim/flutter_alert.json'),
+                              ),
+                            ),
+                          ),
                           Padding(
                             padding: EdgeInsets.only(bottom: 5.0),
                             child: Align(
@@ -432,12 +512,14 @@ class _DashBoardState extends State<DashBoard> {
                                 child: Container(
                                   height: 40.0,
                                   width: MediaQuery.of(context).size.width,
-                                  color: Colors.red,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black54 , width: 1.0)
+                                  ),
                                   child: Center(
                                     child: Text(
                                       'قبول درخواست',
                                       style: TextStyle(
-                                          color: Colors.white
+                                          color: Colors.black
                                       ),
                                     ),
                                   ),
