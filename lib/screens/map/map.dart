@@ -69,6 +69,7 @@ class _MapRouteState extends State<MapRoute> {
                     "اطلاعات کاربر",
                     style: TextStyle(
                         height: 1,
+                        fontFamily: "IRANSans",
                         color: Colors.black,
                         fontWeight: FontWeight.w600),
                   ),
@@ -104,6 +105,7 @@ class _MapRouteState extends State<MapRoute> {
                     child: Text(
                       '${widget.reequest.result.customer.fname} ${widget.reequest.result.customer.lname}',
                       style: TextStyle(
+                        fontFamily: "IRANSans",
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
                         fontSize: 20.0,
@@ -116,6 +118,7 @@ class _MapRouteState extends State<MapRoute> {
                     child: Text(
                       '${widget.reequest.result.car.name}   ${widget.reequest.result.car.color}',
                       style: TextStyle(
+                          fontFamily: "IRANSans",
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0
                       ),
@@ -137,6 +140,7 @@ class _MapRouteState extends State<MapRoute> {
                                   'زمان تقریبی تا مقصد:',
                                   style: TextStyle(
                                     fontSize: 12.0,
+                                      fontFamily: "IRANSans",
                                     height: 1
                                   ),
                                 ),
@@ -147,6 +151,7 @@ class _MapRouteState extends State<MapRoute> {
                                 child: Text(
                                   ' 7 دقیقه',
                                   style: TextStyle(
+                                    fontFamily: "IRANSans",
                                     color: Colors.black,
                                   ),
                                 ),

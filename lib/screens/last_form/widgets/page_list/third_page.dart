@@ -100,56 +100,7 @@ class _Page3State extends State<Page3> {
                                     'عکس کامل'
                                   ),
                                 ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_jolo_pelak == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera2(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس کامل جلو با پلاک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_jolo_pelak,
-                                    'عکس کامل جلو با پلاک',),
-                                ),
+                                __ImagePicker(2,width,height , 'عکس کامل جلو با پلاک'),
                                 Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: width * .07,
@@ -1274,6 +1225,57 @@ class _Page3State extends State<Page3> {
       f.image_kilometr_airbag = picture;
     });
   }
+  Widget __ImagePicker(i,width,height , image_name){
+    return Container(
+      margin: EdgeInsets.symmetric(
+          horizontal: width * .07,
+          vertical: height * .01),
+      height: (height) * .25,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(
+              Radius.circular(15.0)),
+          border: Border.all(
+              color: Colors.red,
+              width: 1,
+              style: BorderStyle.solid)),
+      child: (widget.file.image_jolo_pelak == null)
+          ? GestureDetector(
+        onTap: () {
+          setState(() {
+            _camerProccesor(i);
+          });
+        },
+        child: Container(
+          height:
+          ((height * .75) * .88) * .15,
+          width: 150,
+          child: Center(
+            child: Column(
+              mainAxisAlignment:
+              MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  Icons.camera_alt,
+                  size: 40.0,
+                  color: Colors.grey
+                      .withOpacity(.8),
+                ),
+                Text(
+                  image_name,
+                  style: TextStyle(
+                      fontSize: 12.0,
+                      height: 1),
+                )
+              ],
+            ),
+          ),
+        ),
+      )
+          : _decidedImageView(
+        widget.file.image_jolo_pelak,
+        image_name,),
+    );
+  }
 
   _openCamera16(BuildContext context, Filess f) async {
     var picture = await ImagePicker.pickImage(source: ImageSource.camera);
@@ -1301,5 +1303,18 @@ class _Page3State extends State<Page3> {
     setState(() {
       f.image_khesarat = picture;
     });
+  }
+
+  void _camerProccesor(arg) {
+    switch(arg){
+      case 1:
+        _openCamera1(
+            context, widget.file);
+        break;
+      case 2:
+        _openCamera2(
+            context, widget.file);
+        break;
+    }
   }
 }
