@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sanannegarexperts/model/request_model.dart';
 
-class UserDialog extends StatelessWidget {
+class InsurenceDialog extends StatelessWidget {
   final String title;
   final Image image;
   Request request;
 
-  UserDialog({
+  InsurenceDialog({
     @required this.title,
     @required this.request,
     @optionalTypeArgs this.image,
@@ -61,6 +61,7 @@ class UserDialog extends StatelessWidget {
                     title,
                     style: TextStyle(
                       fontSize: 20.0,
+                      color: Colors.white,
                       fontFamily: 'IRANSans',
                       fontWeight: FontWeight.w700,
                     ),
@@ -78,7 +79,7 @@ class UserDialog extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               Icon(
-                                Icons.recent_actors,
+                                Icons.account_balance,
                                 size: 20.0,
                                 color: Colors.black,
                               ),
@@ -86,7 +87,7 @@ class UserDialog extends StatelessWidget {
                                 width: width * .04,
                               ),
                               Text(
-                                'کد ملی: ',
+                                'شرکت بیمه: ',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontFamily: 'IRANSans',
@@ -94,7 +95,7 @@ class UserDialog extends StatelessWidget {
                                     fontSize: 16.0),
                               ),
                               Text(
-                                request.result.customer.nationalCode,
+                                request.result.insurance.company,
                                 style: TextStyle(
                                   fontFamily: 'IRANSans',
                                 ),
@@ -107,7 +108,7 @@ class UserDialog extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               Icon(
-                                Icons.person,
+                                Icons.assistant_photo,
                                 size: 20.0,
                                 color: Colors.black,
                               ),
@@ -115,7 +116,7 @@ class UserDialog extends StatelessWidget {
                                 width: width * .04,
                               ),
                               Text(
-                                'نام پدر: ',
+                                'شعبه: ',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontFamily: 'IRANSans',
@@ -123,7 +124,7 @@ class UserDialog extends StatelessWidget {
                                     fontSize: 16.0),
                               ),
                               Text(
-                                request.result.customer.fatherName,
+                                request.result.insurance.branch,
                                 style: TextStyle(
                                   fontFamily: 'IRANSans',
                                 ),
@@ -136,7 +137,7 @@ class UserDialog extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               Icon(
-                                Icons.featured_play_list,
+                                Icons.timer,
                                 size: 20.0,
                                 color: Colors.black,
                               ),
@@ -144,7 +145,7 @@ class UserDialog extends StatelessWidget {
                                 width: width * .04,
                               ),
                               Text(
-                                'شماره شناسنامه: ',
+                                'تاریخ شروع: ',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
@@ -152,7 +153,7 @@ class UserDialog extends StatelessWidget {
                                     fontSize: 16.0),
                               ),
                               Text(
-                                request.result.customer.numberId,
+                                request.result.insurance.start,
                                 style: TextStyle(
                                   fontFamily: 'IRANSans',
                                 ),
@@ -165,7 +166,7 @@ class UserDialog extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               Icon(
-                                Icons.location_on,
+                                Icons.timer_off,
                                 size: 20.0,
                                 color: Colors.black,
                               ),
@@ -173,7 +174,7 @@ class UserDialog extends StatelessWidget {
                                 width: width * .04,
                               ),
                               Text(
-                                'صادره از: ',
+                                'تاریخ اتمام: ',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontFamily: 'IRANSans',
@@ -181,7 +182,7 @@ class UserDialog extends StatelessWidget {
                                     fontSize: 16.0),
                               ),
                               Text(
-                                request.result.customer.placeOfIssue,
+                                request.result.insurance.end,
                                 style: TextStyle(
                                   fontSize: 16.0,
                                   fontFamily: 'IRANSans',
@@ -190,34 +191,17 @@ class UserDialog extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 10.0,
+                            height: 50.0,
                           ),
-                          Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.date_range,
-                                size: 20.0,
-                                color: Colors.black,
-                              ),
-                              SizedBox(
-                                width: width * .04,
-                              ),
-                              Text(
-                                'تاریخ تولد: ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'IRANSans',
-                                    color: Colors.white,
-                                    fontSize: 16.0),
-                              ),
-                              Text(
-                                request.result.customer.birth_date,
-                                style: TextStyle(
-                                  fontFamily: 'IRANSans',
-                                ),
-                              ),
-                            ],
-                          ),
+                          (request.result.insurance.endError)
+                              ? Text(
+                                  'تاریخ اتمام بیمه نامه نزدیک است',
+                                  style: TextStyle(
+                                      color: Colors.amber,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: width * .045),
+                                )
+                              : Container()
                         ],
                       ),
                     ),
@@ -271,9 +255,10 @@ class UserDialog extends StatelessWidget {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: Image.asset('assets/images/avatar.png')
-                                .image)),
+                            fit: BoxFit.contain,
+                            image: Image.asset(
+                              'assets/images/asia.png',
+                            ).image)),
                   ),
                 )),
           ),

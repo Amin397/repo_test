@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanannegarexperts/alert_info/alert_insurence_info.dart';
 import 'package:sanannegarexperts/alert_info/alert_user_info.dart';
 import 'package:sanannegarexperts/dashboard/ui/custom_clip_path.dart';
 import 'package:sanannegarexperts/model/request_model.dart';
@@ -14,9 +15,14 @@ class TopPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery
+        .of(context)
+        .size
+        .height;
+    var width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
 
     return Container(
@@ -29,7 +35,7 @@ class TopPart extends StatelessWidget {
               child: ClipPath(
                 child: Container(
                   height: height * .22,
-                  width:width,
+                  width: width,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                           colors: [
@@ -69,31 +75,30 @@ class TopPart extends StatelessWidget {
               ),
             ),
           ),
-//ClipRRect from top of
           Align(
             alignment: Alignment.center,
-              child: Material(
-                  elevation: 5.0,
-                  shadowColor: Colors.lightBlueAccent,
-                  borderRadius: BorderRadius.all(Radius.circular(100)),
-                  child: Padding(
-                    padding: EdgeInsets.all(1.5),
-                    child: Container(
-                      height: (height * .27) * .55,
-                      width: (height * .27) * .55,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: Image.network(request.result.customer.avatar).image
-                          )
-                      ),
+            child: Material(
+                elevation: 5.0,
+                shadowColor: Colors.lightBlueAccent,
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+                child: Padding(
+                  padding: EdgeInsets.all(1.5),
+                  child: Container(
+                    height: (height * .27) * .55,
+                    width: (height * .27) * .55,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image
+                                .asset('assets/images/avatar.png')
+                                .image
+                        )
                     ),
-                  )
-              ),
+                  ),
+                )
+            ),
           ),
-
-
           Positioned(
             top: height * .16,
             right: 0.0,
@@ -118,16 +123,14 @@ class TopPart extends StatelessWidget {
                         borderRadius:
                         BorderRadius.all(Radius.circular(15.0))),
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         showDialog(
                           context: context,
-                          builder: (BuildContext context) => CustomDialog(
-                            title: "اطلاعات کاربر",
-                            request: request,
-                            description:
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.met, consectetur adua.met, consectetur adipiscinggna aliqua.met, cconsectetur adipiscinggna aliquaipiscinggna aliqua.met, cconsectetur adipiscinggna aliqua.met, consectetur adipisonsectetur adipiscing elit, sed do eiusmod tempor incidid elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq",
-                            buttonText: "Okay",
-                          ),
+                          builder: (BuildContext context) =>
+                              UserDialog(
+                                title: "اطلاعات کاربر",
+                                request: request,
+                              ),
                         );
                       },
                       child: Center(
@@ -157,20 +160,37 @@ class TopPart extends StatelessWidget {
                       borderRadius:
                       BorderRadius.all(Radius.circular(15.0)),
                     ),
-                    child: Center(
-                      child: Text(
-                        'اطلاعات بیمه',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'IRANSans'),
+                    child: InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              InsurenceDialog(
+                                title: "اطلاعات بیمه",
+                                request: request,
+                              ),
+                        );
+                      },
+                      child: Center(
+                        child: Text(
+                          'اطلاعات بیمه',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'IRANSans'),
+                        ),
                       ),
                     )),
               ],
             ),
           ),
-//user information
+          Positioned(
+            bottom: height * .098,
+            left: width * .25,
+            child: (request.result.insurance.endError) ? Icon(
+              Icons.info, color: Colors.amber, size: 20.0) : Container(),
+          ),
           Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
@@ -185,7 +205,6 @@ class TopPart extends StatelessWidget {
                       fontSize: 16.0),
                 ),
               )),
-
           Align(
               alignment: Alignment.topCenter,
               child: Padding(
@@ -197,7 +216,7 @@ class TopPart extends StatelessWidget {
                   children: <Widget>[
                     Material(
                       child: GestureDetector(
-                        onTap: (){
+                        onTap: () {
 
                         },
                         child: Container(
