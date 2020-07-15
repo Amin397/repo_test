@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:sanannegarexperts/alert_info/alert_insurence_info.dart';
 import 'package:sanannegarexperts/alert_info/alert_user_info.dart';
 import 'package:sanannegarexperts/dashboard/ui/custom_clip_path.dart';
@@ -6,6 +7,8 @@ import 'package:sanannegarexperts/model/request_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TopPart extends StatelessWidget {
+
+  final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
 
   Request request;
 
@@ -217,7 +220,7 @@ class TopPart extends StatelessWidget {
                     Material(
                       child: GestureDetector(
                         onTap: () {
-
+                          _service.call("${request.result.customer.mobile}");
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -239,17 +242,22 @@ class TopPart extends StatelessWidget {
                       BorderRadius.all(Radius.circular(100.0)),
                     ),
                     Material(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white),
-                        height: height * .05,
-                        width: height * .05,
-                        child: Center(
-                          child: Icon(
-                            Icons.local_post_office,
-                            color: Colors.orangeAccent,
-                            size: 20,
+                      child: GestureDetector(
+                        onTap: (){
+                          _service.sendSms(request.result.customer.mobile);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white),
+                          height: height * .05,
+                          width: height * .05,
+                          child: Center(
+                            child: Icon(
+                              Icons.local_post_office,
+                              color: Colors.orangeAccent,
+                              size: 20,
+                            ),
                           ),
                         ),
                       ),
@@ -264,4 +272,16 @@ class TopPart extends StatelessWidget {
       ),
     );
   }
+}
+
+GetIt locator = GetIt();
+
+void setupLocator() {
+  locator.registerSingleton(CallsAndMessagesService());
+}
+
+class CallsAndMessagesService {
+  void call(String number) => launch("tel:$number");
+  void sendSms(String number) => launch("sms:$number");
+  void sendEmail(String email) => launch("mailto:$email");
 }

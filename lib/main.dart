@@ -6,19 +6,23 @@ import 'package:sanannegarexperts/dashboard/main_page.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/ui/signin.dart';
 import 'package:sanannegarexperts/map.dart';
+import 'package:sanannegarexperts/screens/widgets/top_part.dart';
 import 'package:sanannegarexperts/splashscreen.dart';
 import 'package:load/load.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'login/ui/widgets/loading.dart';
 
-void main() => runApp(LoadingProvider(
-      loadingWidgetBuilder: (ctx, data) {
-        return Loading();
-      },
-      child: OverlaySupport(
+void main(){
+  setupLocator();
+  runApp(LoadingProvider(
+    loadingWidgetBuilder: (ctx, data) {
+      return Loading();
+    },
+    child: OverlaySupport(
         child: MyApp()
-      ),
-    ));
+    ),
+  ));
+}
 
 class MyApp extends StatelessWidget {
 

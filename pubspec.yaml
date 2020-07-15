@@ -64,7 +64,8 @@ dependencies:
   image_picker: ^0.6.7+4
   beauty_textfield: ^0.0.1
   lottie: ^0.4.1
-  url_launcher: ^5.5.0
+  get_it: ^1.0.3+2
+  url_launcher: ^5.0.3
 
 dev_dependencies:
   flutter_test:
