@@ -49,920 +49,25 @@ class _Page3State extends State<Page3> {
                             child: ListView(
                               physics: BouncingScrollPhysics(),
                               children: <Widget>[
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_koli == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera1(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس کامل',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_koli,
-                                    'عکس کامل'
-                                  ),
-                                ),
-                                __ImagePicker(2,width,height , 'عکس کامل جلو با پلاک'),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_jolo_rast_pelak ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera3(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس جلو و راست با پلاک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_jolo_rast_pelak,
-                                    'عکس جلو و راست با پلاک',
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_jolo_chap_pelak ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera4(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس جلو و چپ با پلاک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_jolo_chap_pelak,
-                                    'عکس جلو و چپ با پلاک',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_aghab_pelak == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera5(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس کامل عقب با پلاک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_aghab_pelak,
-                                    'عکس کامل عقب با پلاک',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_aghab_rast_pelak ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera6(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس عقب و راست با پلاک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_aghab_rast_pelak,
-                                    'عکس عقب و راست با پلاک',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_aghab_chap_pelak ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera7(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس عقب و چپ با پلاک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_aghab_chap_pelak,
-                                    'عکس عقب و چپ با پلاک',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_shasi_number ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera8(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس شماره شاسی حک شده',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_shasi_number,
-                                    'عکس شماره شاسی حک شده',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_motor_number ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera9(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس شماره موتور حک شده',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_motor_number,
-                                    'عکس شماره موتور حک شده',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_ayene_kamel == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera10(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس آینه ها کامل',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_ayene_kamel,
-                                    'عکس آینه ها کامل',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file
-                                              .image_lavazem_janebi_fabrik ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera11(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس لوازم جانبی فابریک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(widget
-                                          .file.image_lavazem_janebi_fabrik,
-                                    'عکس لوازم جانبی فابریک',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget
-                                              .file.image_gheyre_fabrik_otagh ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera12(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس لوازم غیرفابریک اتاق',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(widget
-                                          .file.image_gheyre_fabrik_otagh,
-                                    'عکس لوازم غیرفابریک اتاق',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_zapas == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera13(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس زاپاس',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_zapas,
-                                    'عکس زاپاس',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_ring_lastic == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera14(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس رینگ و لاستیک',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_ring_lastic,
-                                    'عکس رینگ و لاستیک',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_kilometr_airbag ==
-                                          null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera15(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس صفحه کیلومتر با ایربگ',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_kilometr_airbag,
-                                    'عکس صفحه کیلومتر با ایربگ',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_options == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera16(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس آپشن ها',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_options,
-                                    'عکس آپشن ها',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_shishe == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera17(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس شیشه ها',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_shishe,
-                                    'عکس شیشه ها',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_cart == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera18(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس کارت خودرو',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_cart,
-                                    'عکس کارت خودرو',),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: width * .07,
-                                      vertical: height * .01),
-                                  height: (height) * .25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0)),
-                                      border: Border.all(
-                                          color: Colors.red,
-                                          width: 1,
-                                          style: BorderStyle.solid)),
-                                  child: (widget.file.image_khesarat == null)
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              _openCamera19(
-                                                  context, widget.file);
-                                            });
-                                          },
-                                          child: Container(
-                                            height:
-                                                ((height * .75) * .88) * .15,
-                                            width: 150,
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Icon(
-                                                    Icons.camera_alt,
-                                                    size: 40.0,
-                                                    color: Colors.grey
-                                                        .withOpacity(.8),
-                                                  ),
-                                                  Text(
-                                                    'عکس خسارات فعلی',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        height: 1),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : _decidedImageView(
-                                          widget.file.image_khesarat,
-                                    'عکس خسارات فعلی',),
-                                ),
+                                __ImagePicker(1, width, height, 'عکس کامل' , widget.file.image_koli),
+                                __ImagePicker(2,width,height , 'عکس کامل جلو با پلاک' , widget.file.image_jolo_pelak),
+                                __ImagePicker(3, width, height, 'عکس جلو و راست با پلاک' , widget.file.image_jolo_rast_pelak),
+                                __ImagePicker(4, width, height, 'عکس جلو و چپ با پلاک', widget.file.image_jolo_chap_pelak),
+                                __ImagePicker(5, width, height, 'عکس کامل عقب با پلاک', widget.file.image_aghab_pelak),
+                                __ImagePicker(6, width, height, 'عکس عقب و راست با پلاک', widget.file.image_aghab_rast_pelak),
+                                __ImagePicker(7, width, height, 'عکس عقب و چپ با پلاک', widget.file.image_aghab_chap_pelak),
+                                __ImagePicker(8, width, height, 'عکس شماره شاسی حک شده', widget.file.image_shasi_number),
+                                __ImagePicker(9, width, height, 'عکس شماره موتور حک شده', widget.file.image_motor_number),
+                                __ImagePicker(10, width, height, 'عکس آینه ها کامل', widget.file.image_ayene_kamel),
+                                __ImagePicker(11, width, height, 'عکس لوازم جانبی فابریک', widget.file.image_lavazem_janebi_fabrik),
+                                __ImagePicker(12, width, height, 'عکس لوازم غیرفابریک اتاق', widget.file.image_gheyre_fabrik_otagh),
+                                __ImagePicker(13, width, height, 'عکس زاپاس', widget.file.image_zapas),
+                                __ImagePicker(14, width, height, 'عکس رینگ و لاستیک', widget.file.image_ring_lastic),
+                                __ImagePicker(15, width, height, 'عکس صفحه کیلومتر با ایربگ', widget.file.image_kilometr_airbag),
+                                __ImagePicker(16, width, height, 'عکس آپشن ها', widget.file.image_options),
+                                __ImagePicker(17, width, height, 'عکس شیشه ها', widget.file.image_shishe),
+                                __ImagePicker(18, width, height, 'عکس کارت خودرو', widget.file.image_cart),
+                                __ImagePicker(19, width, height, 'عکس خسارات فعلی', widget.file.image_khesarat)
                               ],
                             ),
                           ),
@@ -1225,7 +330,8 @@ class _Page3State extends State<Page3> {
       f.image_kilometr_airbag = picture;
     });
   }
-  Widget __ImagePicker(i,width,height , image_name){
+
+  Widget __ImagePicker(i,width,height , image_name , File file){
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: width * .07,
@@ -1238,11 +344,11 @@ class _Page3State extends State<Page3> {
               color: Colors.red,
               width: 1,
               style: BorderStyle.solid)),
-      child: (widget.file.image_jolo_pelak == null)
+      child: (file == null)
           ? GestureDetector(
         onTap: () {
           setState(() {
-            _camerProccesor(i);
+            _cameraProccesor(i);
           });
         },
         child: Container(
@@ -1272,7 +378,7 @@ class _Page3State extends State<Page3> {
         ),
       )
           : _decidedImageView(
-        widget.file.image_jolo_pelak,
+        file,
         image_name,),
     );
   }
@@ -1305,16 +411,86 @@ class _Page3State extends State<Page3> {
     });
   }
 
-  void _camerProccesor(arg) {
+  void _cameraProccesor(arg) {
     switch(arg){
-      case 1:
+      case 1:{
         _openCamera1(
             context, widget.file);
         break;
-      case 2:
+      }
+      case 2:{
         _openCamera2(
             context, widget.file);
         break;
+        }
+      case 3:{
+        _openCamera3(context, widget.file);
+        break;
+      }
+      case 4:{
+        _openCamera4(context, widget.file);
+        break;
+      }
+      case 5:{
+        _openCamera5(context, widget.file);
+        break;
+      }
+      case 6:{
+        _openCamera6(context, widget.file);
+        break;
+      }
+      case 7:{
+        _openCamera7(context, widget.file);
+        break;
+      }
+      case 8:{
+        _openCamera8(context, widget.file);
+        break;
+      }
+      case 9:{
+        _openCamera9(context, widget.file);
+        break;
+      }
+      case 10:{
+        _openCamera10(context, widget.file);
+        break;
+      }
+      case 11:{
+        _openCamera11(context, widget.file);
+        break;
+      }
+      case 12:{
+        _openCamera12(context, widget.file);
+        break;
+      }
+      case 13:{
+        _openCamera13(context, widget.file);
+        break;
+      }
+      case 14:{
+        _openCamera14(context, widget.file);
+        break;
+      }
+      case 15:{
+        _openCamera15(context, widget.file);
+        break;
+      }
+      case 16:{
+        _openCamera16(context, widget.file);
+        break;
+      }
+      case 17:{
+        _openCamera17(context, widget.file);
+        break;
+      }
+      case 18:{
+        _openCamera18(context, widget.file);
+        break;
+      }
+      case 19:{
+        _openCamera19(context, widget.file);
+        break;
+      }
     }
   }
 }
