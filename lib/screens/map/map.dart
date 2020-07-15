@@ -151,6 +151,7 @@ class _MapRouteState extends State<MapRoute> {
                                 child: Text(
                                   ' 7 دقیقه',
                                   style: TextStyle(
+                                    height: 1,
                                     fontFamily: "IRANSans",
                                     color: Colors.black,
                                   ),

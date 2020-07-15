@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:sanannegarexperts/GLOBAL_CONSTANTS.dart';
 import 'package:sanannegarexperts/dashboard/main_page.dart';
 import 'package:sanannegarexperts/login/constants/constants.dart';
 import 'package:sanannegarexperts/login/ui/signin.dart';
-import 'package:sanannegarexperts/map.dart';
 import 'package:sanannegarexperts/screens/widgets/top_part.dart';
 import 'package:sanannegarexperts/splashscreen.dart';
 import 'package:load/load.dart';

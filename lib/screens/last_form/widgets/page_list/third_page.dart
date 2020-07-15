@@ -49,25 +49,100 @@ class _Page3State extends State<Page3> {
                             child: ListView(
                               physics: BouncingScrollPhysics(),
                               children: <Widget>[
-                                __ImagePicker(1, width, height, 'عکس کامل' , widget.file.image_koli),
-                                __ImagePicker(2,width,height , 'عکس کامل جلو با پلاک' , widget.file.image_jolo_pelak),
-                                __ImagePicker(3, width, height, 'عکس جلو و راست با پلاک' , widget.file.image_jolo_rast_pelak),
-                                __ImagePicker(4, width, height, 'عکس جلو و چپ با پلاک', widget.file.image_jolo_chap_pelak),
-                                __ImagePicker(5, width, height, 'عکس کامل عقب با پلاک', widget.file.image_aghab_pelak),
-                                __ImagePicker(6, width, height, 'عکس عقب و راست با پلاک', widget.file.image_aghab_rast_pelak),
-                                __ImagePicker(7, width, height, 'عکس عقب و چپ با پلاک', widget.file.image_aghab_chap_pelak),
-                                __ImagePicker(8, width, height, 'عکس شماره شاسی حک شده', widget.file.image_shasi_number),
-                                __ImagePicker(9, width, height, 'عکس شماره موتور حک شده', widget.file.image_motor_number),
-                                __ImagePicker(10, width, height, 'عکس آینه ها کامل', widget.file.image_ayene_kamel),
-                                __ImagePicker(11, width, height, 'عکس لوازم جانبی فابریک', widget.file.image_lavazem_janebi_fabrik),
-                                __ImagePicker(12, width, height, 'عکس لوازم غیرفابریک اتاق', widget.file.image_gheyre_fabrik_otagh),
-                                __ImagePicker(13, width, height, 'عکس زاپاس', widget.file.image_zapas),
-                                __ImagePicker(14, width, height, 'عکس رینگ و لاستیک', widget.file.image_ring_lastic),
-                                __ImagePicker(15, width, height, 'عکس صفحه کیلومتر با ایربگ', widget.file.image_kilometr_airbag),
-                                __ImagePicker(16, width, height, 'عکس آپشن ها', widget.file.image_options),
-                                __ImagePicker(17, width, height, 'عکس شیشه ها', widget.file.image_shishe),
-                                __ImagePicker(18, width, height, 'عکس کارت خودرو', widget.file.image_cart),
-                                __ImagePicker(19, width, height, 'عکس خسارات فعلی', widget.file.image_khesarat)
+                                __ImagePicker(1, width, height, 'عکس کامل',
+                                    widget.file.image_koli),
+                                __ImagePicker(
+                                    2,
+                                    width,
+                                    height,
+                                    'عکس کامل جلو با پلاک',
+                                    widget.file.image_jolo_pelak),
+                                __ImagePicker(
+                                    3,
+                                    width,
+                                    height,
+                                    'عکس جلو و راست با پلاک',
+                                    widget.file.image_jolo_rast_pelak),
+                                __ImagePicker(
+                                    4,
+                                    width,
+                                    height,
+                                    'عکس جلو و چپ با پلاک',
+                                    widget.file.image_jolo_chap_pelak),
+                                __ImagePicker(
+                                    5,
+                                    width,
+                                    height,
+                                    'عکس کامل عقب با پلاک',
+                                    widget.file.image_aghab_pelak),
+                                __ImagePicker(
+                                    6,
+                                    width,
+                                    height,
+                                    'عکس عقب و راست با پلاک',
+                                    widget.file.image_aghab_rast_pelak),
+                                __ImagePicker(
+                                    7,
+                                    width,
+                                    height,
+                                    'عکس عقب و چپ با پلاک',
+                                    widget.file.image_aghab_chap_pelak),
+                                __ImagePicker(
+                                    8,
+                                    width,
+                                    height,
+                                    'عکس شماره شاسی حک شده',
+                                    widget.file.image_shasi_number),
+                                __ImagePicker(
+                                    9,
+                                    width,
+                                    height,
+                                    'عکس شماره موتور حک شده',
+                                    widget.file.image_motor_number),
+                                __ImagePicker(
+                                    10,
+                                    width,
+                                    height,
+                                    'عکس آینه ها کامل',
+                                    widget.file.image_ayene_kamel),
+                                __ImagePicker(
+                                    11,
+                                    width,
+                                    height,
+                                    'عکس لوازم جانبی فابریک',
+                                    widget.file.image_lavazem_janebi_fabrik),
+                                __ImagePicker(
+                                    12,
+                                    width,
+                                    height,
+                                    'عکس لوازم غیرفابریک اتاق',
+                                    widget.file.image_gheyre_fabrik_otagh),
+                                __ImagePicker(13, width, height, 'عکس زاپاس',
+                                    widget.file.image_zapas),
+                                __ImagePicker(
+                                    14,
+                                    width,
+                                    height,
+                                    'عکس رینگ و لاستیک',
+                                    widget.file.image_ring_lastic),
+                                __ImagePicker(
+                                    15,
+                                    width,
+                                    height,
+                                    'عکس صفحه کیلومتر با ایربگ',
+                                    widget.file.image_kilometr_airbag),
+                                __ImagePicker(16, width, height, 'عکس آپشن ها',
+                                    widget.file.image_options),
+                                __ImagePicker(17, width, height, 'عکس شیشه ها',
+                                    widget.file.image_shishe),
+                                __ImagePicker(18, width, height,
+                                    'عکس کارت خودرو', widget.file.image_cart),
+                                __ImagePicker(
+                                    19,
+                                    width,
+                                    height,
+                                    'عکس خسارات فعلی',
+                                    widget.file.image_khesarat)
                               ],
                             ),
                           ),
@@ -146,10 +221,12 @@ class _Page3State extends State<Page3> {
                               print(widget.strings.ostan);
 //                              print(widget.file.image_koli.path);
                               hideLoadingDialog();
-                              Navigator.of(context).pushReplacement(PageRouteBuilder(
-                                  transitionDuration:
-                                      Duration(milliseconds: 600),
-                                  pageBuilder: (_, __, ___) => SuccessPage()));
+                              Navigator.of(context).pushReplacement(
+                                  PageRouteBuilder(
+                                      transitionDuration:
+                                          Duration(milliseconds: 600),
+                                      pageBuilder: (_, __, ___) =>
+                                          SuccessPage()));
                             } else {
                               print('error');
                             }
@@ -181,49 +258,45 @@ class _Page3State extends State<Page3> {
     );
   }
 
-  Widget _decidedImageView(File imageFile , String image_name) {
+  Widget _decidedImageView(File imageFile, String image_name) {
     return Container(
-      height: ((MediaQuery.of(context).size.height * .75) * .88) * .15,
-      width: 150,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-      ),
-      child: Stack(overflow: Overflow.clip,
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(13.0)),
-                image: DecorationImage(
-                    fit: BoxFit.cover, image: Image.file(imageFile).image)),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(15.0)),
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [
-                  Colors.black.withOpacity(.6),
-                  Colors.black.withOpacity(.4),
-                  Colors.black.withOpacity(.1),
-                  Colors.transparent
-                ]
-              )
+        height: ((MediaQuery.of(context).size.height * .75) * .88) * .15,
+        width: 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        ),
+        child: Stack(
+          overflow: Overflow.clip,
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(13.0)),
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: Image.file(imageFile).image)),
             ),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                image_name,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black.withOpacity(.6),
+                        Colors.black.withOpacity(.4),
+                        Colors.black.withOpacity(.1),
+                        Colors.transparent
+                      ])),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Text(
+                  image_name,
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600),
                 ),
               ),
-            ),
-          )
-        ],
-      )
-    );
+            )
+          ],
+        ));
   }
 
   _openCamera1(BuildContext context, Filess f) async {
@@ -331,55 +404,47 @@ class _Page3State extends State<Page3> {
     });
   }
 
-  Widget __ImagePicker(i,width,height , image_name , File file){
+  Widget __ImagePicker(i, width, height, image_name, File file) {
     return Container(
-      margin: EdgeInsets.symmetric(
-          horizontal: width * .07,
-          vertical: height * .01),
+      margin:
+          EdgeInsets.symmetric(horizontal: width * .07, vertical: height * .01),
       height: (height) * .25,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-              Radius.circular(15.0)),
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
           border: Border.all(
-              color: Colors.red,
-              width: 1,
-              style: BorderStyle.solid)),
+              color: Colors.red, width: 1, style: BorderStyle.solid)),
       child: (file == null)
           ? GestureDetector(
-        onTap: () {
-          setState(() {
-            _cameraProccesor(i);
-          });
-        },
-        child: Container(
-          height:
-          ((height * .75) * .88) * .15,
-          width: 150,
-          child: Center(
-            child: Column(
-              mainAxisAlignment:
-              MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(
-                  Icons.camera_alt,
-                  size: 40.0,
-                  color: Colors.grey
-                      .withOpacity(.8),
+              onTap: () {
+                setState(() {
+                  _cameraProccesor(i);
+                });
+              },
+              child: Container(
+                height: ((height * .75) * .88) * .15,
+                width: 150,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.camera_alt,
+                        size: 40.0,
+                        color: Colors.grey.withOpacity(.8),
+                      ),
+                      Text(
+                        image_name,
+                        style: TextStyle(fontSize: 12.0, height: 1),
+                      )
+                    ],
+                  ),
                 ),
-                Text(
-                  image_name,
-                  style: TextStyle(
-                      fontSize: 12.0,
-                      height: 1),
-                )
-              ],
-            ),
-          ),
-        ),
-      )
+              ),
+            )
           : _decidedImageView(
-        file,
-        image_name,),
+              file,
+              image_name,
+            ),
     );
   }
 
@@ -412,85 +477,102 @@ class _Page3State extends State<Page3> {
   }
 
   void _cameraProccesor(arg) {
-    switch(arg){
-      case 1:{
-        _openCamera1(
-            context, widget.file);
-        break;
-      }
-      case 2:{
-        _openCamera2(
-            context, widget.file);
-        break;
+    switch (arg) {
+      case 1:
+        {
+          _openCamera1(context, widget.file);
+          break;
         }
-      case 3:{
-        _openCamera3(context, widget.file);
-        break;
-      }
-      case 4:{
-        _openCamera4(context, widget.file);
-        break;
-      }
-      case 5:{
-        _openCamera5(context, widget.file);
-        break;
-      }
-      case 6:{
-        _openCamera6(context, widget.file);
-        break;
-      }
-      case 7:{
-        _openCamera7(context, widget.file);
-        break;
-      }
-      case 8:{
-        _openCamera8(context, widget.file);
-        break;
-      }
-      case 9:{
-        _openCamera9(context, widget.file);
-        break;
-      }
-      case 10:{
-        _openCamera10(context, widget.file);
-        break;
-      }
-      case 11:{
-        _openCamera11(context, widget.file);
-        break;
-      }
-      case 12:{
-        _openCamera12(context, widget.file);
-        break;
-      }
-      case 13:{
-        _openCamera13(context, widget.file);
-        break;
-      }
-      case 14:{
-        _openCamera14(context, widget.file);
-        break;
-      }
-      case 15:{
-        _openCamera15(context, widget.file);
-        break;
-      }
-      case 16:{
-        _openCamera16(context, widget.file);
-        break;
-      }
-      case 17:{
-        _openCamera17(context, widget.file);
-        break;
-      }
-      case 18:{
-        _openCamera18(context, widget.file);
-        break;
-      }
-      case 19:{
-        _openCamera19(context, widget.file);
-        break;
-      }
+      case 2:
+        {
+          _openCamera2(context, widget.file);
+          break;
+        }
+      case 3:
+        {
+          _openCamera3(context, widget.file);
+          break;
+        }
+      case 4:
+        {
+          _openCamera4(context, widget.file);
+          break;
+        }
+      case 5:
+        {
+          _openCamera5(context, widget.file);
+          break;
+        }
+      case 6:
+        {
+          _openCamera6(context, widget.file);
+          break;
+        }
+      case 7:
+        {
+          _openCamera7(context, widget.file);
+          break;
+        }
+      case 8:
+        {
+          _openCamera8(context, widget.file);
+          break;
+        }
+      case 9:
+        {
+          _openCamera9(context, widget.file);
+          break;
+        }
+      case 10:
+        {
+          _openCamera10(context, widget.file);
+          break;
+        }
+      case 11:
+        {
+          _openCamera11(context, widget.file);
+          break;
+        }
+      case 12:
+        {
+          _openCamera12(context, widget.file);
+          break;
+        }
+      case 13:
+        {
+          _openCamera13(context, widget.file);
+          break;
+        }
+      case 14:
+        {
+          _openCamera14(context, widget.file);
+          break;
+        }
+      case 15:
+        {
+          _openCamera15(context, widget.file);
+          break;
+        }
+      case 16:
+        {
+          _openCamera16(context, widget.file);
+          break;
+        }
+      case 17:
+        {
+          _openCamera17(context, widget.file);
+          break;
+        }
+      case 18:
+        {
+          _openCamera18(context, widget.file);
+          break;
+        }
+      case 19:
+        {
+          _openCamera19(context, widget.file);
+          break;
+        }
     }
   }
 }
