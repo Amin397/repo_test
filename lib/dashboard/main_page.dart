@@ -20,6 +20,7 @@ import 'package:sanannegarexperts/map/google_map.dart';
 import 'package:sanannegarexperts/model/request_model.dart';
 import 'package:sanannegarexperts/publictest.dart';
 import 'package:sanannegarexperts/screens/last_form/last_form.dart';
+import 'file:///G:/saman_negar_experts/lib/screens/parts_table/select_parts_table.dart';
 import 'package:sanannegarexperts/screens/request/button.dart';
 import 'package:sanannegarexperts/screens/request/main_request.dart';
 import 'package:sanannegarexperts/screens/request/user_request_ui.dart';
@@ -459,7 +460,10 @@ class _DashBoardState extends State<DashBoard> {
                     )))
               ]),
         ),
-        onTap: () {});
+        onTap: () {
+          Navigator.of(context).push(new MaterialPageRoute(
+              builder: (BuildContext context) => new PartsTable()));
+        });
   }
 
   Widget activationWidget() {

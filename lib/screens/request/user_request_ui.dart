@@ -114,11 +114,8 @@ class modal_bottom_sheet extends StatelessWidget {
                           amin = Request.fromJson(res);
                           hideLoadingDialog();
                           Navigator.pop(context);
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.upToDown,
-                                  child: MainRequest(amin)));
+                          Navigator.of(context).push( MaterialPageRoute(
+                              builder: (BuildContext context) =>  MainRequest(amin)));
 
                         } else {
                           print('amin');
